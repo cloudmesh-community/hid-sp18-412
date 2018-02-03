@@ -1,0 +1,10 @@
+Here are the below url implementations:
+
+/proc returns the platform processor
+/ram returns the ram usage
+/user returns the current user information
+/process/<id> returns the information about the specific process name
+with respect to the given id 
+
+
+
