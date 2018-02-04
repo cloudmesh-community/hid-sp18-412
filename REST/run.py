@@ -57,7 +57,7 @@ def process_id(id):
 		):
 		info = None
 	if info is not None:
-		app3 = "<html><body>Process Statastics are"+str(info)+"</body></html>"
+		app3 = "<html><body>Process Stats"+str(info)+"</body></html>"
 		return app3
 	return "Process not Found please enter a valid process id"	
 	
