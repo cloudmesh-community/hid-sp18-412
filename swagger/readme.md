@@ -17,3 +17,6 @@ instructions.
 3> Go to http://0.0.0.0:8080/api/keyvalstore
 
 and we can fetch the respective object defined in the firestore.
+
+
+* https://github.com/cloudmesh-community/hid-sp18-412/blob/master/swagger/Cloudmesh/keyvaluestore/server/cpu/flaskConnexion/swagger_server/controllers/keyval_stub.py
