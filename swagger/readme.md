@@ -36,7 +36,7 @@ The files that are changed are mentioned in the below links:
 
 ## keyval.yaml
 
-*https://github.com/cloudmesh-community/hid-sp18-412/blob/master/swagger/Cloudmesh/keyval.yaml
+* https://github.com/cloudmesh-community/hid-sp18-412/blob/master/swagger/Cloudmesh/keyval.yaml
 
 ## default_controller.py
 
@@ -44,5 +44,5 @@ The files that are changed are mentioned in the below links:
 
 ## keyval_stub.py
 
-*https://github.com/cloudmesh-community/hid-sp18-412/blob/master/swagger/Cloudmesh/keyvaluestore2/server/keyvaluestore/flaskConnexion/swagger_server/controllers/keyval_stub.py
+* https://github.com/cloudmesh-community/hid-sp18-412/blob/master/swagger/Cloudmesh/keyvaluestore2/server/keyvaluestore/flaskConnexion/swagger_server/controllers/keyval_stub.py
 
