@@ -1,0 +1,64 @@
+swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title: "keyvaluestore"
+  description: "A simple service to get Key Value Store using swagger-2.0 specification and codegen"
+  termsOfService: "http://swagger.io/terms/"
+  contact: 
+    name: "Firestore Keyvalue Service"
+  license: 
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/api"
+schemes: 
+  - "http"
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+paths: 
+  /keyvaluestore:
+    get: 
+      description: "Returns key value store object"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Key Value Store"
+          schema: 
+            $ref: "#/definitions/KEYVALUESTORE"
+  /setkeyvalue:
+    post:
+      description: "Sets the key and its value with the parameters"
+      produces:
+        -"application/json"
+
+      parameters:
+        - in: "query"
+          name: "key"
+          allowReserved: "true"
+          required: "true"
+          description: "Key that needs to be stored"
+          type: "string"
+
+        - in: "query"
+          name: "value"
+          allowReserved: "true"
+          required: "false"
+          description: "Value that needs to be stored for the specific key"
+          type: "string"
+
+      responses:
+        "200":
+          description: "Key value Store set"
+          schema:
+            $ref: "#/definitions/KEYVALUESTORE"
+
+definitions:
+  KEYVALUESTORE:
+    type: "object"
+    required: 
+      - "KeyValueStore"
+    properties: 
+      KeyValueStore:
+        type: "string"
