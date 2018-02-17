@@ -32,7 +32,7 @@ Example result of the above call:
 	      "RAM Size": "16 GB"
 	    },
 	    "Ram": {
-	      "-L4xGK_uvGZP30zLzz8R": "hello"
+	      "-L4xGK_uvGZP30zLzz8R": "Dynamic"
 	    },
 	    "Drive2": {
 	      "-L5_GRJ5JDqaz1dJuH8q": "None"
