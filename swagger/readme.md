@@ -20,6 +20,29 @@ and implemented for the object to be displayed from firestore by connecting to t
 3> Curl Call
 
 	curl -X GET http://0.0.0.0:8080/api/keyvaluestore
+Example result of the above call:
+
+	{
+	  "KeyValueStore": {
+	    "File": {
+	      "Size ": "100 GB",
+	      "Time Created": "January 4th 2018"
+	    },
+	    "Memory": {
+	      "RAM Size": "16 GB"
+	    },
+	    "Ram": {
+	      "-L4xGK_uvGZP30zLzz8R": "hello"
+	    },
+	    "Drive2": {
+	      "-L5_GRJ5JDqaz1dJuH8q": "None"
+	    },
+	    "Motherboard": {
+	      "-L5_YK_sbqh6oiq3ptxe": "None"
+	    }
+	  }
+	}
+
    
 # POST
 ## Posting the Key value to the database 
@@ -31,6 +54,13 @@ and implemented for the object to be displayed from firestore by connecting to t
 where the drive1 is key and the default value of the key is set to null.
 
 2> Return value is "Post Successfull" if it is successfully 	   posted.
+
+Example result of the above call:
+
+	{
+	  "KeyValueStore": "Post Successfull"
+	}
+
 
 ## The files that are changed are mentioned in the below links:
 
