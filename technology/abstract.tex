@@ -1,5 +1,20 @@
-\documentclass{article}
-\usepackage{hyperref}
+\documentclass{../../hid-sample/tex/format/laszewski}
+
+
+\addbibresource{hid-sp18-412.bib}  
+\defbibheading{bibempty}{}
+
+\graphicspath{%
+{./}%
+{../../hid-sample/tex/format/images/}%
+}
+
+\newcommand{\TITLE}{Handbook of \\ Clouds and Big Data}
+\newcommand{\SUBTITLE}{Theory and Practice}
+\newcommand{\AUTHOR}{Gregor von Laszewski}
+\newcommand{\EMAIL}{laszewski@gmail.com}
+\newcommand{\LOCATION}{url}
+
 
 \begin{document}
 
@@ -13,13 +28,21 @@
 \input{abstract-appscale}  
 \input{abstract-orientDB}  
 
+
 % replace sample with your hid. make sure you have a filename
 % accordingly note your hid is something like hid-sp18-999
 
-%\bibliographystyle{acm}
-\bibliographystyle{plainurl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
 
-% replace sample with your hid. make sure you have a filename accordingly
-\bibliography{hid-sp18-412} 
+\section*{References}
+\printbibliography[heading=bibempty]
+
+\cleardoublepage
+\phantomsection
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\printindex
+
 
 \end{document}
