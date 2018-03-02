@@ -82,7 +82,7 @@ Generate the ssh key as with the below command
 	cd ~
 	mkdir .ssh 
 	
-```ssh-keygen  -t rsa -P “”```
+	ssh-keygen  -t rsa -P ""
 
 	cat /home/hduser/.ssh/id_rsa.pub >> /home/hduser/.ssh/authorized_keys
 	chmod 600 authorized_keys
