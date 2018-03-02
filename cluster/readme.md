@@ -5,13 +5,17 @@ First,  Login to the terminal and change password for the rasberry pi
 	passwd pi
 	Enter the password as the snowcluster 
 
-2> Next, raspi-config can be used in the terminal:
-	Enter sudo raspi-config in a terminal window
-	Select Interfacing Options
-	Navigate to and select SSH
-	Choose Yes
-	Select Ok
-	Choose Finish
+Next, use `raspi-config` to configure the OS from a terminal window
+
+	sudo raspi-config in a terminal window
+
+In the configuration do the following
+
+#. Select Interfacing Options
+#. Navigate to and select SSH
+#. Choose Yes
+#. Select Ok
+#. Choose Finish
 
 3> Next, we need to check if we are able to connect to the rasberry pi from the different pc or another rasberry pi 
 
