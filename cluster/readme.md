@@ -195,10 +195,13 @@ Add the text
 
 
 
-	Next xml file,
-	b>
+Next edit the xml file `hdfs-site.xml`
+
 	vi hdfs-site.xml  
-	<configuration>
+	
+and integrate the following
+
+        <configuration>
 	<property>
 	<name>dfs.replication</name>
 	<value>1</value>
