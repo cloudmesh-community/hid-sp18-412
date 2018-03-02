@@ -37,10 +37,10 @@ TODO: CORRECT MD FORMAT TO MAKE IT CONSISTENT WITH THE ABOUVE
 	sudo vi /etc/hosts
 
 	piHadoopmaster 169.254.24.132
-	piHadoopslave1  169.254.35.145
-	piHadoopslave2  169.254.87.91
-	piHadoopslave3   169.254.225.63
-	piHadoopslave4   169.254.190.73
+	piHadoopslave1 169.254.35.145
+	piHadoopslave2 169.254.87.91
+	piHadoopslave3 169.254.225.63
+	piHadoopslave4 169.254.190.73
 
 After changing then reboot the node.
 
