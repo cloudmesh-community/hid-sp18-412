@@ -11,17 +11,22 @@ Next, use `raspi-config` to configure the OS from a terminal window
 
 In the configuration do the following
 
-#. Select Interfacing Options
-#. Navigate to and select SSH
-#. Choose Yes
-#. Select Ok
-#. Choose Finish
+1. Select Interfacing Options
+2. Navigate to and select SSH
+3. Choose Yes
+4. Select Ok
+5. Choose Finish
 
-3> Next, we need to check if we are able to connect to the rasberry pi from the different pc or another rasberry pi 
+Now, we need to check if we are able to connect to the rasberry pi from the different pc or another rasberry pi.  
+Login to the Rasberry pi 1, and type in a terminal 
 
-	Login to the Rasberry pi 1, and type ifconfig
-	Next id the etho ipaddress returned via ifconfig command 
-	Next we connected the same ethernet to a laptop and do the ssh of the respective raspberry pi 1 ip address to check if the ssh has been successfully enabled.
+	ifconfig
+	
+TODO: THE NEXT STEP OTHERS CAN NOT UNDERSTAND
+
+We use this command to identify the etho ipaddress returned via `ifconfig` command. We connect the same ethernet to a laptop and do the ssh of the respective raspberry pi 1 ip address to check if the ssh has been successfully enabled.
+
+TODO: CORRECT MD FORMAT TO MAKE IT CONSISTENT WITH THE ABOUVE
 
 4> Next repeat the steps from the 1 to 3 on all other 4 rasberry pi’s.
 
