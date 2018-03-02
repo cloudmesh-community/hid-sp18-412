@@ -70,7 +70,7 @@ You can find the container runtime details as shown below
 	CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
 	536dccdec049        swag3               "python -m swagger_s…"   5 seconds ago       Up 4 seconds        0.0.0.0:8080->8080/tcp   hungry_mahavira
 
-#Test GET and POST for Dockerized the Swagger-API
+# Test GET and POST for Dockerized the Swagger-API
 # GET
 
 ## Get result in the Browser
