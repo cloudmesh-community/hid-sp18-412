@@ -350,11 +350,13 @@ b>
 	1723 ResourceManager
 	2125 Jps
 
-c> Go to Hadoop conf directory 
+Go to Hadoop conf directory 
+
 	cd $HADOOP_CONF_DIR
 	vi slaves 
 
-	Then copy paste the below content 
+Then copy paste the below content 
+
 	PiHadoopMaster
 	PiHadoopSlave1
 	PiHadoopSlave2
@@ -363,12 +365,15 @@ c> Go to Hadoop conf directory
 
 	[slave 1,2,3 configured till setting JAVA_HOME path in hadoop-env.sh under HADOOP_CONF_DIR]
 
+WHAT IS THE LATS LINE IS THIS CORRECT?
 
 Yarn configuration of the xml files in the below steps 
-a> Navigate to the Hadoop Conf directory with the command -  
+Navigate to the Hadoop Conf directory with the command 
+
 	cd $HADOOP_CONF_DIR
 
-b> vi yarn-site.xml
+
+```vi yarn-site.xml```
 Copy paste the below content:
 
 	<property>  
@@ -384,7 +389,7 @@ Copy paste the below content:
 	<value>PiHadoopMaster:8040</value>  
 	</property>  
 
-c> We also need to edit our core-site.xml on all our nodes so that it looks like this:
+We also need to edit our `core-site.xml` on all our nodes so that it looks like this:
 vi core-site.xml
 
 	<configuration>  
