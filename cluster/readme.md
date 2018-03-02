@@ -1,4 +1,4 @@
-# Steps Rasberri pi 
+# Steps Rasberry pi for setting up Hadoop Spark Cluster
 
 	1>Login to the terminal 
 	Change password for the rasberry pi 
