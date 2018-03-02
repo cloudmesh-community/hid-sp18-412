@@ -1,5 +1,7 @@
 # Rasberry Pi Hadoop Spark Cluster
 
+CAN WE USE WORKER INSTEAD OF SLAVE?
+
 First,  Login to the terminal and change password for the rasberry pi 
 
 	passwd pi
