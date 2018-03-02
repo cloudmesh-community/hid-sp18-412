@@ -6,7 +6,7 @@
     python 2.7 or above
     Linux VM - (We used ubuntu 14.04 64 bit)
 
-#Create the Swagger App and Deployment files
+# Create the Swagger App and Deployment files
 
 Create a folder Swagger. All our files will be inside this directory, and the keyval folder should have the directory structure as /keyval/Cloudmesh/keyvaluestore2/server/keyvaluestore
 
