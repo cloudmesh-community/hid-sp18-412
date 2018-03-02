@@ -1,10 +1,9 @@
 # Steps Rasberry pi for setting up Hadoop Spark Cluster
 
-	1>Login to the terminal 
-	Change password for the rasberry pi 
+First,  Login to the terminal and change password for the rasberry pi 
 
-	a>passwd pi
-	b> Enter the password as the snowcluster 
+	passwd pi
+	Enter the password as the snowcluster 
 
 2> Next, raspi-config can be used in the terminal:
 	Enter sudo raspi-config in a terminal window
