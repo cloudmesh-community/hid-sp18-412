@@ -40,92 +40,86 @@ TODO: CORRECT MD FORMAT TO MAKE IT CONSISTENT WITH THE ABOUVE
 	piHadoopslave3   169.254.225.63
 	piHadoopslave4   169.254.190.73
 
-	After changing then reboot the node.
+After changing then reboot the node.
 
-	Login to the slave1 then, open the etc/hosts
-	Then update it as below
+Login to the slave1 then, open the `etc/hosts` and update it as below
+	
 	169.254.35.145 PiHadoopSlave1
 	169.254.24.132 PiHadoopMaster
 
-	Then reboot.
+Then reboot and verify the hostname with command:
 
-	And verify the hostname with command: hostname and hostname -i
+	hostname
+	hostname -i
 
-3> Login to the slave2 and now repeat the same steps to set the hostname 
+Now repeat this step for all other workers.
 
-4> Login to the slave3 and now repeat the same steps to set the hostname 
-
-5> Login to the slave4 and now repeat the same steps to set the hostname
+TOD DO WHAT IS THE STEP, WHERE DOES IT START HEADLINE MISSING
 
 
-	Next connect to the master (make sure to check the hostname)
+Next connect to the master (make sure to check the hostname)
 
-	Create hadoop group with the below command 
+Create hadoop group with the below command 
+
 	sudo addgroup hadoop
 
-	Hduser added to the hadoop group
+		Hduser added to the hadoop group
+	
 	Sudo adduser --ingroup hadoop hduser 
 
-	Add hduser to the sudoers list 
-	Sudo adduser hduser sudo
+		Add hduser to the sudoers list 
+		Sudo adduser hduser sudo
 
-	Next, 
-	Switch user to the hduser
+Next, Switch user to the hduser
+
 	su hduser 
 	(password: snowcluster)
 
-	Generate the ssh key as with the below command 
+Generate the ssh key as with the below command 
 
-	Go to the root directory with the cd~
+	CD ~
 	mkdir .ssh 
 	ssh-keygen  -t rsa -P “”
 
 	cat /home/hduser/.ssh/id_rsa.pub >> /home/hduser/.ssh/authorized_keys
 	chmod 600 authorized_keys
 
-	Copy this key to  master/slave-1 to enable password less ssh 
+Copy this key to  master/slave-1 to enable password less ssh 
+
 	ssh-copy-id -i ~/.ssh/id_rsa.pub <hostname of master/slave-1>
-	Make sure you can do a password less ssh using following command.
+
+Make sure you can do a password less ssh using following command.
+
 	$ ssh <hostname of master/slave-1>
 
+Login to the hduser 
 
-	Login to the hduser 
 	su hduser
 	sudo cat 
 
-	Copy the contents from the id_rs.pub to the authorized_keys.
+Copy the contents from the id_rs.pub to the authorized_keys.
+
 	sudo cat /home/hduser/.ssh/id_rsa.pub >> /home/hduser/.ssh/authorized_keys
 
 
-	Next we need to install the elephant in the room called Hadoop
-	Follow the below commands :
-	Download the hadoop with the below command 
+Next we need to install the elephant in the room called Hadoop. Download the hadoop with the below command 
+
 	wget ftp://apache.belnet.be/mirrors/ftp.apache.org/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz 
 
-	Navigate to that directory (if the directory error message occurs that it already exists then continue)
+Navigate to that directory (if the directory error message occurs that it already exists then continue)
 
 	sudo mkdir /opt  
-
-	Navigate to the home 
 	cd ~
-
-	Extract the hadoop to the opt directory 
 	sudo tar -xvzf hadoop-2.7.1.tar.gz -C /opt/  
-
-	Navigate to the 
 	cd /opt  
-
-	Provide the ownership to the hduser (owner-name) and the hadoop is the group name.
 	sudo chown -R hduser:hadoop hadoop-2.7.1/ 
-	After doing it in master, repeat the same for all masters.
 
+After doing it in master, repeat the same for all masters. Setting the Environment Variables by modifyiong the bashrc file
 
-	Setting the Environment Variables
+	vi ~/.bashrc
 
-	Open bashrc file
-vi ~/.bashrc
-b) Step 2
-	Copy the below lines at the end of the bashrc file 
+Copy the below lines at the end of the bashrc file 
+
 	export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")  
 	export HADOOP_HOME=/opt/hadoop-2.7.1  
 	export HADOOP_MAPRED_HOME=$HADOOP_HOME  
@@ -136,13 +130,13 @@ b) Step 2
 	export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop  
 	export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin 
 
-c) Step 3
-	Execute the below
+Execute 
+
 	source ~/.bashrc
 	hadoop version
 
-d) Step 4
-	We should  see the below output:-
+You will see output similar to 
+	
 	Hadoop 2.7.1
 	Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 15ecc87ccf4a0228f35af08fc56de536e6ce657a
 	Compiled by jenkins on 2015-06-29T06:04Z
@@ -153,28 +147,38 @@ d) Step 4
 e) Repeat the steps from a to d to all the slaves.
 
 
-Configure hadoop
-	a> Login to the master 									Let's go to the directory that contains all the configuration files of Hadoop. We want to edit the hadoop-env.sh file. For some reason we need to configure JAVA_HOME manually in this file, Hadoop seems to ignore our $JAVA_HOME.
-	Execute the below command to go the 
+
+## Configure hadoop
+
+Login to the master and go to the directory that contains all the configuration files of Hadoop. We want to edit the `hadoop-env.sh` file. For some reason we need to configure `JAVA_HOME` manually in this file, Hadoop seems to ignore our $JAVA_HOME.
+Execute the below command to go the 
+	
 	cd $HADOOP_CONF_DIR
 
-b>cd $HADOOP_CONF_DIR  
-	 Open the hadoop-env.sh file.
-	 vi hadoop-env.sh 
+TODO, THOS COULD JUST BE DONE WITH A SCRIPT
 
-	c># The java implementation to use.
-     export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/jre/
+bcd $HADOOP_CONF_DIR  
 
-d>Repeat all the steps from a to b in all the slaves 
+Open the hadoop-env.sh file.
+
+	vi hadoop-env.sh 
+
+	# The java implementation to use.
+     	export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/jre/
+
+Repeat teh configuration step for all slaves
 
 	
 
-Edit of the Xml Files
-Files that need to be edited now are:
-a>
-	.These are XML files, you just have to paste the code bits below between the configuration tags.
+## Edit of the Xml Files
+
+Files that need to be edited include now the XML files. You just have to paste the code bits below between the configuration tags.
+
+TOIDO CAN WE NOT JUST GET THEM IN A REPO OR HAVE A PRG CREATING THEM? ALSO SSH CP COULD BE USED SO WE DO NOT HAVE TO LOG INTO EVERY MACHINE BY HAND
+
 	 vi core-site.xml  
 
+Add the text
 
 	<configuration>
 	<property>
@@ -208,17 +212,18 @@ a>
 
 
 
-c> 
-	Rename the existing mapred-site.xml.template to the mapred-site.xml
+ Rename the existing `mapred-site.xml.template` to the `mapred-site.xml`
 
 	cp mapred-site.xml.template mapred-site.xml  
 
-	Open the mapred-site.xml file 
+Open the mapred-site.xml file 
+
 	vi mapred-site.xml  
 
 
-	Then copy the below code to the file
-	 <property>
+Then copy the below code to the file
+
+	  <property>
 	    <name>mapreduce.framework.name</name>
 	    <value>yarn</value>
 	  </property>
@@ -247,8 +252,8 @@ c>
 The first property tells us that we want to use Yarn as the MapReduce framework. The other properties are some specific settings for our Raspberry Pi. For example we tell that the Yarn Mapreduce Application Manager gets 256 megabytes of RAM and so does the Map and Reduce containers. These values allow us to actually run stuff, the default size is 1,5GB which our Pi can't deliver with its 1GB RAM.
 
 
-d>
-	Open the yarn-site.xml
+Open the `yarn-site.xml`
+
 	vi yarn-site.xml  
 
 
@@ -335,12 +340,12 @@ Prepare the HDFS directory by executing the below commands
 	hdfs namenode -format 
 
 Booting Hadoop
-a>
+
 	cd $HADOOP_HOME/sbin  
 	start-dfs.sh  
 	start-yarn.sh 
-b>
-	If you want to verify that everything is working you can use the jps command. In the output of this command you can see that Hadoop components like the NameNode are running. The numbers can be ignored, they are process numbers.
+
+If you want to verify that everything is working you can use the jps command. In the output of this command you can see that Hadoop components like the NameNode are running. The numbers can be ignored, they are process numbers.
 
 	We can see the below output by executing the jps command 
 	1297 NameNode
