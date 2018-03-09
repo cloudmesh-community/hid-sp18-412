@@ -506,7 +506,7 @@ b) Execute the below command in Master
 
 ## ISSUES TO BE ADDRESSED	
 
-After retsarting the slaves, if the above cpmmand does not result 5 data nodes (master and 4 slaves)
+After restarting the slaves, if the above cpmmand does not result 5 data nodes (master and 4 slaves)
 then do the following on all slaves
 
 If tmp does not exist
