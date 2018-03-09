@@ -53,9 +53,6 @@ Then reboot and verify the hostname with command:
 
 h>Now repeat this step g for all other 3 workers.
 
-
-TOD DO WHAT IS THE STEP, WHERE DOES IT START HEADLINE MISSING
-
 ## Creating a new group and user (Perform this step on master and other 4 workers)
 
 a> Connect to the master (make sure to check the hostname)
