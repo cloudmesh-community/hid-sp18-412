@@ -511,17 +511,17 @@ then do the following on all slaves
 
 If tmp does not exist
 
-sudo mkdir -p /hdfs/tmp  
-sudo chown hduser:hadoop /hdfs/tmp  
-chmod -R 755 /hdfs/tmp  
-hdfs namenode -format 
+    sudo mkdir -p /hdfs/tmp  
+    sudo chown hduser:hadoop /hdfs/tmp  
+    chmod -R 755 /hdfs/tmp  
+    hdfs namenode -format 
 
 else
 
-cd $HADOOP_HOME/sbin
-stop-all.sh
-rm -Rf /hdfs/tmp/dfs/*
-hdfs namenode -format
+    cd $HADOOP_HOME/sbin
+    stop-all.sh
+    rm -Rf /hdfs/tmp/dfs/*
+    hdfs namenode -format
 
 
 
