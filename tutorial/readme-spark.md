@@ -30,3 +30,4 @@
 		vi spark-env.sh
 		- SPARK_MASTER_HOST = 169.254.24.132
 		- SPARK_WORKER_MEMORY = 512m
+	
