@@ -1,19 +1,19 @@
 ## Steps for Setting up the Spark on the Rasberry Pi Cluster (Pre-requisite - Hadoop should be installed)
 
-	### Navigate to the path /home/hduser 
+   ### Navigate to the path /home/hduser 
 	
        cd /home/hduser 
 
-	### Begin the download with the following command 
+   ### Begin the download with the following command 
 	
 	   wget http://apache.claz.org/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz
 	   
 	   
-	### Unzip the tar file of the spark
+   ### Unzip the tar file of the spark
 	
 	   tar -xzf spark-2.3.0-bin-hadoop2.7.tgz
 	   
-	### Move the spark that is extracted to the directory /opt/
+   ### Move the spark that is extracted to the directory /opt/
 		
 	   sudo  mv spark-2.3.0-bin-hadoop2.7 /opt/
 	   
