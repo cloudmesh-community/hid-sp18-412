@@ -1,0 +1,131 @@
+\title{Benchmarking Spark}
+
+\author{Gregor von Laszewski}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{Smith Research Center}
+  \city{Bloomington}
+  \state{IN}
+  \postcode{47408}
+}
+\email{laszewski@gmail.com}
+
+\author{Karan Kamatgi}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{School of Informatics, Computing, and Engineering}
+  \city{Bloomington}
+  \state{IN}
+  \postcode{47404}
+}
+\email{krkamatg@iu.edu}
+
+\author{Karan Kotabagi}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{School of Informatics, Computing, and Engineering}
+  \city{Bloomington}
+  \state{IN}
+  \postcode{47404}
+}
+\email{kkotabag@iu.edu}
+
+\author{Manoj Joshi}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{School of Informatics, Computing, and Engineering}
+  \city{Bloomington}
+  \state{IN}
+  \postcode{47404}
+}
+\email{manjoshi@iu.edu}
+
+\author{Ramyashree DG}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{School of Informatics, Computing, and Engineering}
+  \city{Bloomington}
+  \state{IN}
+  \postcode{47404}
+}
+\email{rdasego@iu.edu}
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{G. v. Laszewski, Karan Kamatgi, 
+	Karan Kotabagi, Manoj Joshi, Ramyashree DG}
+
+
+\begin{abstract}
+\TODO{Add data set used}
+\TODO{Realize Spark Cluster without hadoop}
+Apache Spark is a framework targeted for cluster-computing. 
+The extremely fast processing of the spark makes it run 100 times
+faster than Hadoop. Spark is installed natively on the 
+Rasberry Pi cluster with the one master and four workers. 
+The main goal is to create a spark cluster and perform the 
+relevant configurations in order to compare and contrast 
+the difference in performance, ease of deployment, flexibility 
+and scalability on various platforms like direct installation 
+on Rasberry Pi cluster, docker on Rasberry Pi 
+cluster and Futuresystems Echo.
+\end{abstract}
+
+\keywords{Spark, Raspberry Pi, Futuresystems, Docker, Hadoop 
+V/S Spark, Spark Cluster}
+
+\maketitle
+
+\section{Introduction}
+\TODO{Write an introduction.}
+
+\section{Technology Used}
+\TODO{Describe Raspberry Pis.}
+\TODO{Describe Echo.}
+\TODO{Describe Spark.}
+\TODO{Describe Docker.}
+
+
+\section{Deployment}
+
+The deployment process involves working towards setting up the 
+Spark Cluster on multiple Raspberry Pi's. The Raspberry Pi cluster
+includes one master and four workers. The first step in the 
+deployment process is to burn the SD cards.
+
+\section{Data}
+\TODO{Describe data}
+
+
+\section{Benchmarking Process}
+\TODO{Describe the process used for benchmarking.}
+
+\section{Results}
+\TODO{Add results.}
+
+\begin{table}[hbt]
+\centering
+\caption{Benchmarking results}\label{t:results-table}
+\begin{tabular}{llll}
+Platform    & Docker & Deployment time & Task Execution Time \\
+Pi 5 nodes  & Yes    & TBD             & TBD            \\
+Pi 5 nodes  & No     & TBD             & TBD            \\
+Echo        & Yes    & TBD             & TBD            \\
+Echo        & No     & TBD             & TBD            \\
+\end{tabular}
+\end{table}
+
+
+
+\section{Conclusion}
+
+\TODO{Add Conclusion}
+
+\begin{acks}
+
+  The authors would like to thank Dr.~Gregor~von~Laszewski 
+  for his support and suggestions to write this paper.
+  
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report}
