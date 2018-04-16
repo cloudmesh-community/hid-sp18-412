@@ -41,7 +41,7 @@ test-get:
 	curl http://0.0.0.0:8080/api/keyvaluestore 
 
 test-post:
-	curl -X POST http://0.0.0.0:8080/api/setkeyvalue?key=drive4
+	curl -X POST http://0.0.0.0:8080/api/setkeyvalue?key=Monitor
 
 docker-start: docker-build docker-run
 

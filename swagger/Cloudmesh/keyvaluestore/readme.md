@@ -92,6 +92,10 @@
 ### Get the keyvaluestore
 
 	curl -X GET http://0.0.0.0:8080/api/keyvaluestore
+
+	or 
+
+	make test-get (run in the directory swagger/Cloudmesh/keyvaluestore)
    
 Example result of the above call:
 
@@ -117,15 +121,18 @@ Example result of the above call:
 	}
 
    
-# POST
+## POST
 
 ### Posting the Key value to the database 
 
 * The curl call for the post method is as below 
 
-	curl -X POST http://0.0.0.0:8080/api/setkeyvalue?key=drive9
+	curl -X POST http://0.0.0.0:8080/api/setkeyvalue?key=Monitor
 
-where the drive9 is key and the default value of the key is set to null.
+	or 
+
+	make test-post (run in the directory swagger/Cloudmesh/keyvaluestore)
+where the Monitor is key and the default value of the key is set to null.
 
 * Return value is "Post Successfull" if it is successfully 	   inserted into the firestore.
 
@@ -134,7 +141,6 @@ Example result of the above call:
 	{
 	  "KeyValueStore": "Post Successfull"
 	}
-
 
 ## The container id at the runtime can be found with the following command 
  	
@@ -145,8 +151,8 @@ Example result of the above call:
 	CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
 	536dccdec049        swag3               "python -m swagger_s…"   5 seconds ago       Up 4 seconds        0.0.0.0:8080->8080/tcp   hungry_mahavira
 
-
 ### References and acknowledgements 
+
 I have referred the repositories hid-sp18-405 and hid-sp18-409 in order to create the Makefile with respect to the swagger service that I have implemented.
 
 

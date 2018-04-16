@@ -16,12 +16,7 @@ EXPOSE 8080
 
 # WORKDIR /app/keyvalstore/server/keyvalstore/flaskConnexion/
 
-RUN ls
 WORKDIR /app/
-
-RUN pwd
-
-RUN ls
 
 RUN make service 
 
