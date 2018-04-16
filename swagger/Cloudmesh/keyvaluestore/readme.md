@@ -128,7 +128,10 @@ Example result of the above call:
 * The curl call for the post method is as below 
 
 	curl -X POST http://0.0.0.0:8080/api/setkeyvalue?key=Monitor
+
 	or 
+
+	
 	make test-post (run in the directory swagger/Cloudmesh/keyvaluestore)
 where the Monitor is key and the default value of the key is set to null.
 
