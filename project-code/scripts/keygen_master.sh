@@ -1,3 +1,4 @@
+#!/bin/bash  
 echo "Starting Script"
 cd ~
 mkdir .ssh
