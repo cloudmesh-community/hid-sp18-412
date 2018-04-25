@@ -1,8 +1,8 @@
 #!/bin/sh
 
-cd /opt/hadoop-2.7.1/sbin/
+#cd /opt/hadoop-2.7.1/sbin/
 
-sh start-all.sh
+#sh start-all.sh
 
 cd $HADOOP_CONF
 
