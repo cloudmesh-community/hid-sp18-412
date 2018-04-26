@@ -1,6 +1,6 @@
 from pyspark import SparkContext
 sc = SparkContext()
-text_file = sc.textFile("/home/pi/abc1.txt")
+text_file = sc.textFile("/home/pi/*.txt")
 counts = text_file.flatMap(lambda line: line.split(" ")).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 print("******************Done with Counts*********************")
 #print(counts)
