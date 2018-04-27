@@ -1,5 +1,5 @@
 
-\title{Benchmarking Hadoop and Spark on mutiple platforms}
+\title{Benchmarking Hadoop and Spark on Mutiple Platforms}
 
 \author{Gregor von Laszewski}
 \affiliation{%
@@ -57,7 +57,7 @@
   
 \begin{abstract}
 
-This modern era of big data computing embraces the potential benefits such as 
+In this modern era of big data computing embraces the potential benefits such as 
 high volume, high velocity and high variety. Where as in distributed computing, 
 a task is processed over two or more computers in the network within distributed
  system by breaking down the problem into many parallel smaller task. This 
@@ -484,6 +484,333 @@ Spark is easier and is flexible. Spark provides a lot of instructions at a
 higher level of abstraction than what MapReduce provides
 \cite{hid-sp18-408-Difference}.
 
+\section{Hadoop Architecture}
+\subsection{General Introduction about the Hadoop Architecture}
+The Apache Hadoop is distributed computation framework that that provides 
+the storage and capability of running the programs on the multiple 
+Master-Slave architecture in order to enable the distributed processing. 
+The very basic implementation of the Apache Hadoop started with the 
+Google’s MapReduce programming model, which now has grown to an 
+enormous ecosystem with the related technologies such as Apache Hive, 
+Apache Spark and Apache HBase. The architectural pattern of the Hadoop 
+has made it so famous that it has been adopted by many of the companies 
+such as Facebook, Yahoo, Adobe, 
+Cisco, ebay etc~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+\subsection{HDFS Architecture}
+The HDFS architecture was designed with the main goals of avoiding 
+hardware failure, large datasets corresponding to around gigabytes 
+and terabytes, portability 
+and a simple coherent model~\cite{hid-sp18-412-HDFS-Architecture}.
+
+The data is divided into the small units called as the blocks 
+in the hadoop cluster and subsequently the data is distributed 
+across the cluster. The duplication of the data in the blocks 
+is done twice, and totally with the three copies. The two of 
+the copies called as the replicas are stored at a different 
+place in the cluster. Since there are going to be the three 
+copies of the data the replication factor increase to the three 
+leading to increase the availability of the data. When a certain 
+copy is lost then the HDFS will again re-replicate the data in 
+order to maintain the value of the 
+replication factor to three~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+There are mainly two models of the HDFS architecture 
+which varies based on the characteristics and the version 
+of the Hadoop, they are 
+as follows~\cite{hid-sp18-412-hadoop-architecture-overview}:
+-Vanilla HDFS
+-High Availability HDFS
+
+The main basic architecture of the HDFS follows a 
+leader/follower pattern. A cluster would be 
+specifically composed of a single Namenode, 
+an optional secondary node and the 
+random number of the data nodes~\cite{hid-sp18-412-HDFS-Architecture}.
+
+The following Figure 1 displays the vanilla hadoop deployment.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/vanilla.png}\label{s:vani_archi}
+\end{center}
+\textbf{Figure 1: Vanilla Hadoop Architecture
+~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+
+\subsubsection{Namenode and DataNodes}
+The HDFS cluster composes of a single Namenode, this node acts as 
+the master server which
+ handles the filesystem namespace in order to control 
+relevant access to the files by the clients.
+There are random number of datanodes that enable the 
+storage of the data in the nodes
+ they are attached to. In order to effectively allow the 
+user data to be stored in the 
+ files the HDFS exposes a file system namespace which 
+enables the storage of the user 
+ data in the files. Subsequently, the file is further 
+divided into one or more blocks 
+ which will be stored in the set of the data nodes. 
+The execution of the tasks with 
+ respect to the opening, closing, renaming files and directories and the other 
+ namespace functionalities are carried out by the namenode. The namenode also 
+ servers in order to decide the mapping of the blocks to the datanodes. 
+ The read and write requests from the clients of the file system
+  are fulfilled by the datanodes~\cite{hid-sp18-412-HDFS-Architecture}.
+
+The following Figure 2 displays the HDFS Architecture.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/HDFSarchi.png}\label{s:hdfs}
+\end{center}
+\textbf{Figure 2: HDFS Architecture~\cite{hid-sp18-412-HDFS-Architecture}} 
+
+The general platform that the namenodes and the datanodes run are on 
+the GNU/Linux operating system. The main primary language used to 
+build the HDFS is java. A typical machine that can support the 
+Java will be able to run the namenode and the datanode. As the 
+system uses the high portable java language the HDFS can be 
+easily deployed on the wide range of the machines. With the 
+presence of the single namenode in the cluster there is simplification 
+of the HDFS architecture. The Namenode acts as an arbitrator 
+and a repository for the whole of the HDFS metadata. 
+The system is designed by treating the NameNode as the 
+black box and it never allows the user 
+data to flow out of the NameNode~\cite{hid-sp18-412-HDFS-Architecture}.
+
+\subsubsection{File System NameSpace}
+The file organization in the HDFS is similar to the 
+traditional hierarchical file organization. The HDFS 
+filesystem provides the functionalities to the users to create, 
+add, rename, remove and move the files to the respective directories. 
+The HDFS file system provide the effective support that 
+enables the user quotas and the 
+permission to access the file system~\cite{hid-sp18-412-HDFS-Architecture}. 
+
+The namespace of the filesystem is managed by the NameNode. 
+Any of the transactions with respect to the file system 
+namespace or the properties will be recorded by the NameNode. 
+The replication factor can be controlled and changed by 
+any of the client application. The data with respect to the 
+replication factor is 
+stored by the NameNode~\cite{hid-sp18-412-HDFS-Architecture}.
+
+\subsubsection{fsimage and edit log}
+The file system metadata is stored in two of the 
+different files by the NameNode, those are fsimage 
+and the editlog. At the specific event of the time 
+the fsimage facilitates the storage of the file 
+systems metadata. The few of the changes that are going 
+to be updated such as renaming, appending to a 
+file are maintained in an edit log to ensure the durability. 
+This avoids the redundant creation of the 
+new fsimage every time the 
+namespace is modified~\cite{hid-sp18-412-hadoop-architecture-overview}. 
+
+The structuring of the secondary NameNode is shown in the Figure 3.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/StructureOfSecondaryNode.png}\label{s:hdfs}
+\end{center}
+\textbf{Figure 3: Structuring of the Secondary NameNode
+~\cite{hid-sp18-412-hadoop-architecture-overview}}
+
+
+The Figure 3 shows the structuring of the secondary NameNode. 
+The secondary NameNode will be independently validating and 
+updating the replica of the fsimage subsequent to the changes 
+that are made in the edit log. If the active node fails in the 
+system then NameNode will not need to rebuild the edit 
+log on top of the fsimage. The administrators of the 
+cluster can easily retrieve the updated copy of the 
+fsImage from the 
+SecondaryNameNode~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+The secondaryNameNode also provides the advantage and 
+benefit of the faster recovery in case of the NameNode failure. 
+Although, the SecondaryNameNode 
+will not provide automatic failover 
+load balancing~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+
+\subsection{MapReduce}
+The Mapreduce is the effective framework that can be 
+utilized to process the large datasets in the distributed way. 
+Basically, there are three operations in the MapReduce model, 
+Map the input dataset into the collective pairs, 
+shuffle the mapped data and handover the data to the 
+reducers then subsequently reduce the over all pairs 
+with the same number of keys. The example of the 
+map-reduce job correspond to the WordCount example 
+which is again illustrated in this paper that has 
+been followed to analyse the performance of the hadoop 
+and spark on the different platforms. 
+The high-level specification or the unit in the 
+MapReduce framework is the Job. The each of the 
+job composes of the one or 
+more map or the reduce tasks~\cite{hid-sp18-412-hadoop-architecture-overview}. 
+The following Figure 4 the perfect example of the MapReduce 
+job with respect to the 
+WordCount application~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/WordCountMapReduce.png}\label{s:hdfs}
+\end{center}
+\textbf{Figure 4: Word Count MapReduce 
+Job~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+
+\subsubsection{Related Frameworks}
+There are other frameworks that perform and accomplish the 
+MapReduce jobs other than hadoop. The most used frameworks 
+other than the Hadoop are the Apache Spark and Apache Tez. 
+This paper also describes the Apache spark and the relevant 
+analysis that is performed with respect to the Apache Spark 
+with the different computing platforms and the 
+different computing resources~\cite{hid-sp18-412-hadoop-architecture-overview}.
+
+\subsection{YARN}
+The major idea of the YARN is to divide the functionalities of the 
+resource management and the job scheduling/management into 
+the separate daemons. The very basic and the primary idea 
+is to have the global resource manager (RM) and the per-application master. 
+The application would be treated as the single job 
+or the Directed Acyclic 
+graph of the Jobs~\cite{hid-sp18-412-YARN_Architecture}.
+
+\subsubsection{Data Computation Framework}
+The data computation framework is formed by the Resource Manager 
+and the NodeManager. The major authority is possessed  
+by the ResourceManager that will possess the ultimate 
+authority that will assign the resources to 
+the applications in the system. In contrast, 
+the NodeManager is the framework that is assigned 
+to per machine which is responsible for monitoring of 
+the containers and the resource allocation with 
+respect to the cpu, memory, disk and the network, 
+which would report the 
+same to the Resource Manager /Scheduler~\cite{hid-sp18-412-YARN_Architecture}.
+
+The following figure 5 describes the architecture of the YARN.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/YARNArchitecture.png}\label{s:hdfs}
+\end{center}
+\textbf{Figure 5: Architecture of YARN~\cite{hid-sp18-412-YARN_Architecture}} 
+
+\subsubsection{Resource Manager}
+The following figure 6 describes the architecture of the 
+resource manager and displays the high-level view of the 
+resource manager. The resource manager (RM) is assigned the 
+responsibility of tracking the resources in the cluster and 
+the scheduling jobs. The standby resource manager provides 
+the failover load balancing for the Active ResourceManager. 
+The standby resource manager will be waiting to take 
+over in case of any of the disaster with 
+respect to the active resource manager~\cite{hid-sp18-412-YARN_Architecture}.
+
+The following figure 6 describes the architecture of the Resource Manager.
+
+\begin{center}
+\includegraphics[scale=0.35]{images/YARNResourceManager.png}\label{s:res}
+\end{center}
+\textbf{Figure 6: Architecture of 
+Resource Manager~\cite{hid-sp18-412-ResourceManager_Architecture}}
+
+\subsubsection{Node Manager}
+This node manager is the slave in the system infrastructure. 
+When the node manager starts it indicates the Resource Manager 
+that it is gone live. At the continuous periodic times it will 
+send the signals to the Resource Manager indicating that it is live. 
+At the next depth, the container is the fraction of the Node Manager 
+and it is in turn used by the 
+client to run the application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
+
+The following figure 7 displays the division of 
+the Node Manager into containers.
+\begin{center}
+\includegraphics[scale=0.35]{images/nodemanager.png}\label{s:res}
+\end{center}
+\textbf{Figure 7: Node Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}
+
+\section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
+The figure indicates the architecture of the Apache Hadoop on the 
+Raspberry Pi nodes. There are basically 5 nodes which have been 
+divided into the master and the workers. 
+The YARN is deployed on top of the Hadoop. 
+There are five nodes and 4 of them are treated and 
+configured as the workers and one node is configured as the 
+master. Further, Java and Python WordCount application is run 
+in order to benchmark, evaluate and compare the performance
+ of the Hadoop and spark applications.
+
+The following figure 8 displays the division 
+of the Node Manager into containers.
+\begin{center}
+\includegraphics[scale=0.35]{images/RaspberryPiSpark.png}\label{s:rasp}
+\end{center}
+\textbf{Figure 8: Hadoop Architecture deployed on Rasberry Pi 3}
+
+\section{Docker}
+The docker provides the containerization at the operating systems level. 
+The Docker virtualization system is developed by Docker. Inc. 
+In order to effectively develop and maintain the containers easily
+ on the single Linux Instance the docker provides the effective
+ framework to run the different capability
+ containers in the single machine~\cite{hid-sp18-412-docker_wikepedia}. 
+The docker consists of the three following components:-
+
+\subsection{Software}
+The docker has the major Daemon process called as the “dockerd: 
+which will effectively manage the docker containers and in-turn 
+handle the container objects. The docker client called as the “docker”
+ helps the users to manage and provides the diverse range of options
+ to interact with the containers~\cite{hid-sp18-412-docker_wikepedia}. 
+
+\subsection{Objects}
+The various of the objects in the docker are mainly images,
+ containers and the services. 
+The docker container acts as a black-box that runs 
+the applications virtually. These containers can be managed by 
+the docker API service. The docker images are the templates 
+that can be used to build the containers and acts as a base
+ framework to the containers. The docker service is process
+ that will effectively allow the numerous containers to be
+ extended across the 
+different docker Daemons~\cite{hid-sp18-412-docker_wikepedia}. 
+
+\subsection{Registries}
+Registries are of two types, public and private. 
+At present the Docker hub and the Docker Cloud are 
+the two of the main registries. The Docker 
+Hub provides the different images to be tagged  
+and pulled~\cite{hid-sp18-412-docker_wikepedia}.
+
+\subsection{Docker-Spark}
+This project mainly targeted to benchmark and evaluate 
+the performance of the Apache Hadoop and the standalone 
+spark on the different platforms. Docker was one of the 
+platform that was selected in this project to 
+evaluate the performance of the application with these frameworks.
+
+\subsection{Docker-Spark Architecture} 
+The following figure 9 describes the implementation of the 
+docker-spark architecture that is deployed on the Ubuntu 17.10.
+\begin{center}
+\includegraphics[scale=0.35]{images/dockerspark.png}\label{s:dockerspark}
+\end{center}
+\textbf{Figure 9: Architecture of Docker-Spark Deployment}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Spark Architecture}
 
@@ -522,7 +849,7 @@ Spark also provides extensive support for data science enriched language called
 R. It has a package named SparkR which first appeared in the release of 1.4 
 apache spark. Due to enormous popularity in the data science, this package 
 proves to be one of the important features of Apache Spark
-\cite{hid-sp18-410-spark-architecture}
+~\cite{hid-sp18-410-spark-architecture}
 
 \subsection{Spark deployment options}
 Spark is very easy to download and install on a laptop or virtual machine. 
@@ -708,8 +1035,8 @@ data and serialization that in turn degrades the system performance.
 
 General users run ad-hoc queries on the same subset of data where each query 
 would perform disk I/O on the stable storage that use most of the execution time.
-Figure~\ref{fig:interactive-MapRed} explains the current framework on execution of interactive queries on 
-MapReduce.
+Figure~\ref{fig:interactive-MapRed} explains the current framework on execution 
+of interactive queries on MapReduce.
 
 \begin{center}
 
@@ -733,9 +1060,9 @@ network and disk.
 
 \subsection{Iterative operations in Spark RDD}
 
-Illustration in the Figure~\ref{fig:iterative-spark} explains the iterative operations in spark RDD 
-which stores the intermediate results in a distributed memory rather than stable
- storage such as HDFS and thus makes the system faster.
+Illustration in the Figure~\ref{fig:iterative-spark} explains the iterative 
+operations in spark RDD which stores the intermediate results in a distributed 
+memory rather than stable storage such as HDFS and thus makes the system faster.
 Also if the distributed memory does not suffice to store the intermediate 
 results then Spark stores those results on disk.
 
@@ -754,12 +1081,13 @@ results then Spark stores those results on disk.
 
 \subsection{Interactive operations in Spark RDD}
 
-Figure~\ref{fig:interactive-spark} provides illustration of execution of interactive operation on Spark 
-RDD where in if different queries are executed on same data set then that 
-particular data is stored in memory for better execution times. Each transformed
- RDD might be re-computed each time we run an action against it.We could also 
- persist an RDD in memory and spark would keep elements on the cluster for much 
- faster access and increase the efficiency of whole process \cite{hid-sp18-410-spark-RDD}.
+Figure~\ref{fig:interactive-spark} provides illustration of execution of 
+interactive operation on Spark RDD where in if different queries are executed on
+ same data set then that particular data is stored in memory for better 
+ execution times. Each transformed RDD might be re-computed each time we run an 
+ action against it.We could also persist an RDD in memory and spark would keep 
+ elements on the cluster for much faster access and increase the efficiency of 
+ whole process~\cite{hid-sp18-410-spark-RDD}.
 
 \begin{center}
 
@@ -790,13 +1118,114 @@ mentioned ways of implementing spark cluster.
 
 For the first method we did not install Hadoop and so basically does not consist
  of stable storage system (HDFS) . The basic cluster build configuration were 
- followed and we assume that we have a working cluster with 1 master and 4 workers 
- and each name node is able to ssh to other name nodes in the cluster. 
+ followed and we assume that we have a working cluster with 1 master and 4 
+ workers and each name node is able to ssh to other name nodes in the cluster. 
 
 All the spark related configuration were mentioned in the file spark-env.sh and 
 all 4 workers were listed in the slaves file.
 The second method uses Hadoop on YARN configuration where YARN provides all the 
 information required for spark cluster to run successfully.
+
+
+
+
+
+
+\section{Results and Conclusion}
+
+% \documentclass{article} 
+% \usepackage[english]{babel}
+
+% \begin{document}
+
+
+\begin{center}
+Stand Alone Spark Performance
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ | c | c | c |}
+    \hline
+    Data Size & Technology & Execution time (seconds) \\ \hline
+    3.6 MB & Java & 36 \\ \hline
+    3.6 MB & Python & 23\\ \hline
+    1.5 MB & Java & 30 \\ \hline
+    1.5 MB & Python & 18 \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+Hadoop-Yarn-Spark Performance
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ | c | c | c |}
+    \hline
+    Data Size & Technology & Execution time (seconds) \\ \hline
+    144 KB & Java & 42   \\ \hline
+    144 kB & Python & 67 \\ \hline
+    3.6 MB & Java &  320  \\ \hline
+    3.6 MB & Python & 450 \\
+    \hline
+    \end{tabular} 
+\end{center}
+
+
+\begin{center}
+Stand Alone Docker Python Performance
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ | c | c | c |}
+    \hline
+    Data Size & Iteration & Execution time (seconds) \\ \hline
+    3.6 MB & One & 67  \\ \hline
+    3.6 MB & Two & 24 \\ \hline
+    3.6 MB & Three & 22 \\ \hline
+    \end{tabular}
+\end{center}
+
+The results clearly compare the performance of Hadoop and Spark 
+on different platforms and using different languages such as Java and Python. 
+Clearly, standalone Spark outperforms Hadoop(HDFS) because it persists 
+ the data in memory whereas the HDFS based Hadoop performs extra overhead 
+ operations such as shuffling of data and hence executes slower. 
+ Docker stores data in its own cache for subsequent runs, and hence the 
+ performace enhances for second and third run. The first run takes a long time 
+ on Docker since it has to register all the workers before execution.
+
+ At the outset it looks like Apache Spark seems to be performing better but at 
+ times HDFS Hadoop provides enough fault tolerance and stable storage which 
+ might help other applications. Hence both the frameworks have pros and cons and
+ usage of these framework are greatly application specific. 
+
+
+% \end{document}
+
+
+\section{Work Breakdown}
+
+Initial configuration of all the Raspberry Pi and network configuration 
+required for the clusters were equally contributed by all the team members.
+Karan Kamatgi and Karan Kotabagi did the configurations and server setup for the
+Spark Standalone cluster. Ramyashree DG and Manoj Joshi did the configuration 
+and server setup for Hadoop-Yarn-Spark cluster and Karan Kamatgi contributed for
+the Yarn configuration of this cluster. Python Docker setup was contributed by 
+Karan Kotabagi. Spark-Java benchmarking program was contributed by Ramyashree DG,
+Spark-Python benchmarking program was contributed by Manoj Joshi. Hadoop-Java 
+benchmarking program was done by Karan Kotabagi and the Hadoop-Python 
+benchmarking program was contributed by Karan Kamatgi. Evaluation and 
+benchmarking were carefully analysed by all the team members as a group. All the 
+team members have equally contributed to the sections of project paper, 
+configuration steps for the Raspberry Pi cluster and also have put equal team 
+efforts to resolve the issues faced during the cluster configuration and 
+evaluation process.
+
+
+
+
+
 
 
 \begin{acks}
