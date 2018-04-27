@@ -1,5 +1,9 @@
-SCRIPT_DIR= /scripts/
+SCRIPT_DIR=/scripts/
 
-runapp:
+run-python:
 	cd $(SCRIPT_DIR)
-	./run-app.sh 
+	./run-python-app.sh 
+
+run-java:
+	cd $(SCRIPT_DIR)
+	./run-java-app.sh
