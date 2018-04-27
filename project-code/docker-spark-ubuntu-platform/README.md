@@ -71,4 +71,4 @@ https://www.dropbox.com/s/flids2li7gmt2je/Docker-Spark-Results.PNG?dl=0
 ### References: 
 The dockerfiles and images used to build the Docker-Spark architeture  
 were referenced from the following github repository link and updated accordingly 
-to suit the requirements <https://github.com/big-data-europe/docker-spark?files=1>
+to suit the requirements <https://github.com/big-data-europe/docker-spark?files=1
