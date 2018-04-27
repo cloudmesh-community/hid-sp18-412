@@ -1,5 +1,5 @@
 
-\title{Benchmarking Spark}
+\title{Benchmarking Hadoop and Spark on mutiple platforms}
 
 \author{Gregor von Laszewski}
 \affiliation{%
@@ -56,7 +56,21 @@
   Karan Kotabagi, Manoj Joshi, Ramyashree DG}
   
 \begin{abstract}
-Write abstract here 
+
+This modern era of big data computing embraces the potential benefits such as 
+high volume, high velocity and high variety. Where as in distributed computing, 
+a task is processed over two or more computers in the network within distributed
+ system by breaking down the problem into many parallel smaller task. This 
+ method allows to combine computional power of many computer to execute a 
+ program involving large data or multiple iterations in parallel. Apache Spark 
+ and Hadoop are two frameworks which are trending technologies in the field of 
+ distributed computing. In this project we are comparing both frameworks by 
+ running a task implemented in different technology on a Raspberry pi 
+ distributed system setup with a single master and 4 workers. The final results 
+ are used to benchmark the performance in terms of efficiency and time elapsed. 
+ This analysis would help us realize scenarios and business use cases for each 
+ of these frameworks.
+
 \end{abstract}
 
 \keywords{Spark, Raspberry Pi, Futuresystems, Docker, Hadoop 
@@ -469,6 +483,320 @@ has richer features such as Filter, Join and Group-by. Hence development in
 Spark is easier and is flexible. Spark provides a lot of instructions at a 
 higher level of abstraction than what MapReduce provides
 \cite{hid-sp18-408-Difference}.
+
+
+\section{Spark Architecture}
+
+
+
+\subsection{Overview}
+Spark offers great features in terms of speed, simplicity and high level support
+ for development of current environments and storage systems. They have wide 
+ range of developers that embrace the ongoing development for one of the 
+ Apache's largest and most active platform with around 500 contributors who are 
+ responsible for their code in the software code release.
+
+\subsection{Support for programming languages}
+Spark provides very easy interface and comprehensive support for the enhancement
+ and development languages so that we could easily learn and apply accordingly 
+ into our existing applications as flexibily as possible.
+Spark provides support for modern languages such as Java, Python, Scala, SQl and
+ R. It has been a great concern for most people that Python performs 
+ sub-optimally when compared to its alternate language Java. This concern is 
+ less significant in a distributed environment mostly where Spark would be 
+ deployed. The slight loss in performance if introduced by the usage of Python 
+ language could be compensated elsewhere in the design and distributed 
+ operations of the cluster. One of the analysis carried out, informs us that 
+ familiarity of the user's chosen language is often times more important than 
+ the raw speed of code in that particular language.
+
+Relational databases (RDBMS) which usually comprises of the structured query 
+language (SQL) and the SQL queries are normally well understood by developers, 
+Engineers, Data Scientists and Academia. The Apache Spark module 'Spark SQ' 
+offers native support for SQL. Spark provides excellent support and simplifies 
+whole process of making query request to the data that is stored in the Spark's 
+native RDD (Resilient Distributed Dataset) model along with data from other 
+external sources like relational databases and data warehouses.
+ 
+Spark also provides extensive support for data science enriched language called 
+R. It has a package named SparkR which first appeared in the release of 1.4 
+apache spark. Due to enormous popularity in the data science, this package 
+proves to be one of the important features of Apache Spark
+\cite{hid-sp18-410-spark-architecture}
+
+\subsection{Spark deployment options}
+Spark is very easy to download and install on a laptop or virtual machine. 
+It is designed to be able to deploy on both standalone as well as part of a 
+cluster.Most of the production environment workloads require computations to 
+be carried at large scale and Spark would then be deployed on existing big data 
+cluster. These clusters are used for running Hadoop jobs and Hadoop's YARN 
+resource manager will manage the hadoop cluster. There are several options for 
+running  spark such as running spark on YARN (Yet another Resource Negotiator) 
+which is a cluster management system.
+Yarn could be used to execute arbitrary applications on a hadoop cluster. 
+There needs to be one application master node and several arbitrary number of 
+containers acting as workers. Workers are responsible for the execution of 
+application where as the master makes requests to the workers and monitors the 
+progress and status of the work carried out by the respective workers.
+
+YARN consists of two component types
+
+\begin{itemize}
+
+\item Resource Manager is a unique component for the whole of big data cluster. The 
+main job of Resource Manager is to grant the requested resources and balancing 
+the load of the entire cluster.It also starts the application master only in 
+the initial phase and restarts the master in case of any failure.
+
+\item Each computing node (Worker) has one node manager  which is executed when the 
+master initiates the request. The node manager starts and monitors the 
+containers assigned to the current node in the cluster as well monitors the 
+usage of its resources such as CPU and memory consumption.
+
+\end{itemize}
+
+The other option for running spark where people prefer alternative resource 
+managers, Spark could be run on other clusters controlled by Apache Mesos.
+Spark also provides series of scripts bundled with current releases of spark 
+simplifies the process of launching spark on Amazon web services Elastic 
+compute cloud EC2.
+
+\subsection{Storage options for spark}
+
+Spark can also easily integrate with myriad of commercial and open source 3rd 
+party data storage systems such as MapR, Google Cloud, Amazon S3, Apache 
+Cassandra, Apache Hadoop, Apache Hbase and Apache Hive.
+
+
+\subsection{Spark stack}
+
+
+The spark project comprises of stack components mentioned in the 
+Figure~\ref{fig:spark-stack} and mainly consists of Spark core and 
+4 main libraries that were optimized to address the requirements 
+of several different use cases.
+Any application would technically require Spark Core and at least one of these 
+four libraries.The flexibility and main benefit of spark would become evident 
+when applications that require combination of two or more libraries run 
+efficiently on top of Spark core.
+
+
+\begin{center}
+
+% \begin{figure}[htb!]
+        \centering\includegraphics[scale=0.35]
+        {images/spark-stack.png}
+        \label{fig:spark-stack}
+% \end{figure}
+
+\end{center}
+
+
+\subsection{Spark Core}
+
+The heart of the spark lies at the Spark Core and is responsible for management 
+functions like task scheduling, monitoring and other watchdog services. 
+Spark implements and is based on a programming abstraction known as 
+RDD (Resilient Distributed Dataset).
+
+\subsection{Libraries}
+
+\begin{itemize}
+
+\item Spark SQL - The module for working with structured data within the relational 
+databases.This is designed to support workloads that make familiar and complex 
+SQL queries that helps in algorithm based analytics. This also supports the open
+ source projects such as Hive and HiveQL query syntax. This also supports JDBC 
+ and ODBC connections that enables high level degree of integration with current
+  database systems, data warehouse and business intelligence tools. Most of the 
+  JDBC connectors could be used to integrate with Apache Drill and also connects
+   other broad range of data sources.
+
+\item Spark streaming - This module majorly supports scalable and fault tolerant 
+processing of streaming data which is very much required for a processing of 
+input and output for any cluster based application. This module could also be 
+used for integrating with established sources of data streams such as Flume 
+(Optimizations for the data logs) and Kafka (optimizations for distributed 
+messaging). The design of Spark streaming library and the use of Spark’s RDD 
+abstraction ensures that the applications that are written for streaming data 
+so that it could be modified and used accordingly to analyze the batches of 
+historical data.
+
+\item MLlib - This module includes spark’s scalable machine learning library which 
+technically implements a commonly used set of machine learning and statistical 
+algorithms which include hypothesis testing, classification, regression, 
+clustering and principal component analysis.
+
+\item GraphX- This module was developed at UC Berkeley which was donated to Apache 
+Spark project. This supports analysis and computation over data that is 
+represented as graphs.It also supports a version of graph processing Pregel API.
+
+\item Spark R - this module is added to 1.4.x release of Apache Spark which provides 
+data scientists and statisticians to use their language R in a mechanism that is
+ light weight used for calling upon spark’s capability.
+
+\end{itemize}
+
+\subsection{RDD Design flow}
+
+RDD is designed to support in-memory data storage and distributed across a 
+cluster in manner that is   fault tolerant and efficient. Fault tolerance was 
+achieved in part by tracking lineage of transformations that were applied to 
+coarse grained data sets.Efficiency was achieved through process parallelization
+ across multiple nodes in the cluster and minimization of data replication 
+ between respective nodes.
+Once we load the data into RDD, two basic types of operations are carried out.
+
+\begin{itemize}
+
+\item Transformations - this creates a new RDD by changing by actually changing the 
+original by mechanisms such as filtering and mapping.
+
+\item Actions- some of the operations such as measuring the count which do not change 
+the original data and the original RDD remains untouched throughout the process.
+ Here the chain of transformations from RDD1 to RDDm would be logged and this 
+ process could be repeated in the scenarios such as data loss or failure of 
+ cluster node.
+
+\end{itemize}
+
+ Transformations tend to follow lazy evaluations in the sense that they would 
+not be executed until a subsequent action/operation has an absolute need for 
+result of previous action.This lazy evaluation helps in improving the 
+performance as it could avoid unnecessary processing of the data. This would 
+also introduce processing bottlenecks that could cause applications to stall 
+while waiting for a processing action to conclude.
+
+Spark tries to keep these RDDs in memory that greatly increase the performance 
+of the cluster.
+
+\subsection{Reason for slowness in Data sharing on MapReduce}
+
+MapReduce is one of the most widely adopted technology  for processing and 
+generating large Datasets in parallel with a distributed algorithm on a cluster.
+ Users were able to write parallel computations with help of high level 
+ operators and not worry about work distribution and fault tolerance. But in 
+ most of the current frameworks, the only way to reuse data between 
+ computations was write an external stable storage system such as HDFS. 
+The fast growing user base needs interactive and interactive application that 
+require data sharing at a faster pace. The sharing of data between jobs is slow 
+in MapReduce due to replication, serialization and disk IO. Most of the hadoop 
+applications tend to spend maximum time in reading and writing tasks in HDFS.
+
+\subsection{Iterative operations in MapReduce}
+
+The idea behind executing iterative tasks in MapReduce is to reuse intermediate 
+results across multiple computations in multi storage applications. 
+The Figure~\ref{fig:iterative-MapRed} clearly explains the working of the  
+current framework in context of execution of interactive operations on 
+Mapreduce. This clearly incurs substantial overheads due to I/O, replication of 
+data and serialization that in turn degrades the system performance. 
+\begin{center}
+
+% \begin{figure}[htb!]
+        \centering\includegraphics[scale=0.35]
+        {images/iterative-MapReduce.png}
+        \label{fig:iterative-MapRed}
+% \end{figure}
+
+\end{center}
+\textbf{Iterative Operations on MapReduce}
+
+
+
+\subsection{Interactive tasks in MapReduce}
+
+General users run ad-hoc queries on the same subset of data where each query 
+would perform disk I/O on the stable storage that use most of the execution time.
+Figure~\ref{fig:interactive-MapRed} explains the current framework on execution of interactive queries on 
+MapReduce.
+
+\begin{center}
+
+
+% \begin{figure}[htb!]
+        \centering\includegraphics[scale=0.35]
+        {images/interactive-MapReduce.png}
+        \label{fig:interactive-MapRed}
+% \end{figure}
+
+\end{center}
+\textbf{Interactive Operations on MapReduce}
+
+
+\subsection{Data sharing in Spark RDD}
+The key idea of spark is RDD which supports in-memory process computation.It 
+stores the state of memory as object across the jobs and the object could be 
+shared between respective jobs.Obviously data sharing is much faster than 
+network and disk.
+
+
+\subsection{Iterative operations in Spark RDD}
+
+Illustration in the Figure~\ref{fig:iterative-spark} explains the iterative operations in spark RDD 
+which stores the intermediate results in a distributed memory rather than stable
+ storage such as HDFS and thus makes the system faster.
+Also if the distributed memory does not suffice to store the intermediate 
+results then Spark stores those results on disk.
+
+\begin{center}
+
+% \begin{figure}[htb!]
+        \centering\includegraphics[scale=0.35]
+        {images/iterativeSpark.png}
+        \label{fig:iterative-spark}
+% \end{figure}
+
+\end{center}
+\textbf{Iterative Operations on Spark RDD}
+
+
+
+\subsection{Interactive operations in Spark RDD}
+
+Figure~\ref{fig:interactive-spark} provides illustration of execution of interactive operation on Spark 
+RDD where in if different queries are executed on same data set then that 
+particular data is stored in memory for better execution times. Each transformed
+ RDD might be re-computed each time we run an action against it.We could also 
+ persist an RDD in memory and spark would keep elements on the cluster for much 
+ faster access and increase the efficiency of whole process \cite{hid-sp18-410-spark-RDD}.
+
+\begin{center}
+
+% \begin{figure}[htb!]
+        \centering\includegraphics[scale=0.35]
+        {images/interactiveSpark.png}
+        \label{fig:interactive-spark}
+% \end{figure}
+
+\end{center}
+\textbf{Interactive Operations on Spark RDD}
+
+
+
+\subsection{Spark Cluster Architecture}
+
+We have implemented spark cluster in two different ways
+
+\begin{itemize}
+
+\item Spark standalone cluster
+\item Running spark on Yarn on top of Hadoop
+
+\end{itemize}
+
+Figure (Master-worker diagram) explains the architectural set up of both 
+mentioned ways of implementing spark cluster.
+
+For the first method we did not install Hadoop and so basically does not consist
+ of stable storage system (HDFS) . The basic cluster build configuration were 
+ followed and we assume that we have a working cluster with 1 master and 4 workers 
+ and each name node is able to ssh to other name nodes in the cluster. 
+
+All the spark related configuration were mentioned in the file spark-env.sh and 
+all 4 workers were listed in the slaves file.
+The second method uses Hadoop on YARN configuration where YARN provides all the 
+information required for spark cluster to run successfully.
 
 
 \begin{acks}
