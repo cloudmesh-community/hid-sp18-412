@@ -1,18 +1,18 @@
 ## Git clone the project and navigate to the directory hid-sp18-412/project-code/docker-spark-ubuntu-platform/
 
-##Build all the containers using the following command 
+## Build all the containers using the following command 
 	
 	make build-all
 
-##Run the master using the command 
+## Run the master using the command 
 
 	make run-master
 
-##Run the workers using the command 
+## Run the workers using the command 
 
 	make run-workers 
 
-##Login to the master using 
+## Login to the master using 
 
 	make login-master
 
