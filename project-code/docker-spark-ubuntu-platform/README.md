@@ -64,10 +64,11 @@ Copy paste the IP adresses of the spark worker containers which can be found by 
 	http://<master-IP>:8080
 	Example: <http://172.17.0.2:8080/>
 
-	Output Example:
+### Output Example:
+
 https://www.dropbox.com/s/flids2li7gmt2je/Docker-Spark-Results.PNG?dl=0
 
-### References 
+### References: 
 The dockerfiles and images used to build the Docker-Spark architeture  
 were referenced from the following github repository link and updated accordingly 
-to suit the requirements https://github.com/big-data-europe/docker-spark?files=1
+to suit the requirements <https://github.com/big-data-europe/docker-spark?files=1>
