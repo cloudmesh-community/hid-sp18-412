@@ -1202,11 +1202,9 @@ information required for spark cluster to run successfully.
 % \begin{document}
 
 
-\begin{center}
-Stand Alone Spark Performance
-\end{center}
-
-\begin{center}
+\begin{table}[hbt]
+\centering
+\caption{Stand Alone Spark Performance}\label{t:results-table}
     \begin{tabular}{ | c | c | c |}
     \hline
     Data Size & Technology & Execution time (seconds) \\ \hline
@@ -1216,13 +1214,12 @@ Stand Alone Spark Performance
     1.5 MB & Python & 18 \\
     \hline
     \end{tabular}
-\end{center}
+\end{table}
 
-\begin{center}
-Hadoop-Yarn-Spark Performance
-\end{center}
 
-\begin{center}
+\begin{table}[hbt]
+\centering
+\caption{Hadoop-Yarn-Spark Performance}\label{t:results-table2}
     \begin{tabular}{ | c | c | c |}
     \hline
     Data Size & Technology & Execution time (seconds) \\ \hline
@@ -1232,14 +1229,12 @@ Hadoop-Yarn-Spark Performance
     3.6 MB & Python & 450 \\
     \hline
     \end{tabular} 
-\end{center}
+\end{table}
 
 
-\begin{center}
-Stand Alone Docker Python Performance
-\end{center}
-
-\begin{center}
+\begin{table}[hbt]
+\centering
+\caption{Stand Alone Docker Python Performance}\label{t:results-table3}
     \begin{tabular}{ | c | c | c |}
     \hline
     Data Size & Iteration & Execution time (seconds) \\ \hline
@@ -1247,7 +1242,8 @@ Stand Alone Docker Python Performance
     3.6 MB & Two & 24 \\ \hline
     3.6 MB & Three & 22 \\ \hline
     \end{tabular}
-\end{center}
+\end{table}
+
 
 The results clearly compare the performance of Hadoop and Spark 
 on different platforms and using different languages such as Java and Python. 
