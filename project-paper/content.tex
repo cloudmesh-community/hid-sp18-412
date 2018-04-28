@@ -493,37 +493,37 @@ higher level of abstraction than what MapReduce provides~\cite{hid-sp18-408-Diff
 \section{Hadoop Architecture}
 
 \subsection{General Introduction about the Hadoop Architecture}
-The Apache Hadoop is distributed computation framework that that provides 
-the storage and capability of running the programs on the multiple 
-Master-Slave architecture in order to enable the distributed processing. 
+Apache Hadoop is distributed computation framework that that provides 
+the storage and capability of running the programs on multiple 
+master slave architecture in order to enable the distributed processing. 
 The very basic implementation of the Apache Hadoop started with the 
 Google’s MapReduce programming model, which now has grown to an 
-enormous ecosystem with the related technologies such as Apache Hive, 
+enormous ecosystem with related technologies such as Apache Hive, 
 Apache Spark and Apache HBase. The architectural pattern of the Hadoop 
 has made it so famous that it has been adopted by many of the companies 
 such as Facebook, Yahoo, Adobe, 
 Cisco, ebay etc~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
 \subsection{HDFS Architecture}
-The HDFS architecture was designed with the main goals of avoiding 
-hardware failure, large datasets corresponding to around gigabytes 
+HDFS architecture was designed with the main goals of avoiding 
+hardware failures, large datasets corresponding to around gigabytes 
 and terabytes, portability 
 and a simple coherent model~\cite{hid-sp18-412-HDFS-Architecture}.
 
 The data is divided into the small units called as the blocks 
-in the hadoop cluster and subsequently the data is distributed 
-across the cluster. The duplication of the data in the blocks 
+in hadoop cluster and subsequently data is distributed 
+across the cluster. The duplication of data in blocks 
 is done twice, and totally with the three copies. The two of 
-the copies called as the replicas are stored at a different 
-place in the cluster. Since there are going to be the three 
-copies of the data the replication factor increase to the three 
-leading to increase the availability of the data. When a certain 
+copies are called as replicas and are stored at a different 
+place in cluster. As a result of three
+copies, the data replication factor increase to three 
+leading to increase in availability of data. When a certain 
 copy is lost then the HDFS will again re-replicate the data in 
 order to maintain the value of the 
 replication factor to three~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
 There are mainly two models of the HDFS architecture 
-which varies based on the characteristics and the version 
+which varies based on the characteristics and version 
 of the Hadoop, they are 
 as follows~\cite{hid-sp18-412-hadoop-architecture-overview}:
 \begin{itemize}
@@ -551,23 +551,23 @@ Architecture
 \subsubsection{Namenode and DataNodes}
 The HDFS cluster composes of a single Namenode, this node acts as 
 the master server which
- handles the filesystem namespace in order to control 
-relevant access to the files by the clients.
-There are random number of datanodes that enable the 
+ handles filesystem namespace in order to control 
+relevant access to files by the clients.
+There are random number of datanodes that enable 
 storage of the data in the nodes
  they are attached to. In order to effectively allow the 
-user data to be stored in the 
+user data to be stored in
  files the HDFS exposes a file system namespace which 
-enables the storage of the user 
- data in the files. Subsequently, the file is further 
+enables the storage of user 
+ data in the files. Subsequently, file is further 
 divided into one or more blocks 
  which will be stored in the set of the data nodes. 
-The execution of the tasks with 
+The execution of tasks with 
  respect to the opening, closing, renaming files and directories and the other 
- namespace functionalities are carried out by the namenode. The namenode also 
- servers in order to decide the mapping of the blocks to the datanodes. 
+ namespace functionalities are carried out by namenode. The namenode also 
+ serves in order to decide the mapping of blocks to the datanodes. 
  The read and write requests from the clients of the file system
-  are fulfilled by the datanodes~\cite{hid-sp18-412-HDFS-Architecture}.
+  are fulfilled by datanodes~\cite{hid-sp18-412-HDFS-Architecture}.
 
 The HDFS architecture is shown in Figure~\ref{s:archihdfs}.
 
@@ -579,93 +579,94 @@ Architecture~\cite{hid-sp18-412-HDFS-Architecture}}\label{s:archihdfs}
 
 The general platform that the namenodes and the datanodes run are on 
 the GNU/Linux operating system. The main primary language used to 
-build the HDFS is java. A typical machine that can support the 
-Java will be able to run the namenode and the datanode. As the 
-system uses the high portable java language the HDFS can be 
-easily deployed on the wide range of the machines. With the 
+build the HDFS is java. A typical machine that can support  
+Java will be able to run namenode and the datanode. As  
+system uses high portable java language HDFS can be 
+easily deployed on wide range of the machines. With  
 presence of the single namenode in the cluster there is simplification 
-of the HDFS architecture. The Namenode acts as an arbitrator 
-and a repository for the whole of the HDFS metadata. 
-The system is designed by treating the NameNode as the 
-black box and it never allows the user 
-data to flow out of the NameNode~\cite{hid-sp18-412-HDFS-Architecture}.
+of HDFS architecture. The Namenode acts as an arbitrator 
+and a repository for whole of the HDFS metadata. 
+The system is designed by treating NameNode as 
+black box and it never allows user 
+data to flow out of the Namenode~\cite{hid-sp18-412-HDFS-Architecture}.
 
 \subsubsection{File System NameSpace}
-The file organization in the HDFS is similar to the 
+The file organization in HDFS is similar to the 
 traditional hierarchical file organization. The HDFS 
-filesystem provides the functionalities to the users to create, 
-add, rename, remove and move the files to the respective directories. 
-The HDFS file system provide the effective support that 
-enables the user quotas and the 
+filesystem provides functionalities to the users to create, 
+add, rename, remove and move the files to respective directories. 
+The HDFS file system provide effective support that 
+enables user quotas and grants  
 permission to access the file system~\cite{hid-sp18-412-HDFS-Architecture}. 
 
-The namespace of the filesystem is managed by the NameNode. 
+The namespace of filesystem is managed by the Namenode. 
 Any of the transactions with respect to the file system 
-namespace or the properties will be recorded by the NameNode. 
+namespace or properties will be recorded by the NameNode. 
 The replication factor can be controlled and changed by 
-any of the client application. The data with respect to the 
-replication factor is 
-stored by the NameNode~\cite{hid-sp18-412-HDFS-Architecture}.
+any of the respective client application. The data with 
+respect to 
+replication factor is also
+stored by NameNode~\cite{hid-sp18-412-HDFS-Architecture}.
 
 \subsubsection{fsimage and edit log}
-The file system metadata is stored in two of the 
-different files by the NameNode, those are fsimage 
-and the editlog. At the specific event of the time 
-the fsimage facilitates the storage of the file 
-systems metadata. The few of the changes that are going 
+File system metadata is stored in two of the 
+different files by NameNode, those are fsimage 
+and the editlog. At the specific event of time 
+the fsimage facilitates storage of file 
+systems metadata. The few of changes that are going 
 to be updated such as renaming, appending to a 
-file are maintained in an edit log to ensure the durability. 
-This avoids the redundant creation of the 
-new fsimage every time the 
+file are maintained in an edit log to ensure durability. 
+This avoids redundant creation of the
+new fsimage every time when a 
 namespace is modified~\cite{hid-sp18-412-hadoop-architecture-overview}. 
 
-The structuring of the secondary NameNode is 
-shown in the Figure~\ref{s:secnode}.
+Structuring of the secondary NameNode is 
+shown in Figure~\ref{s:secnode}.
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{images/StructureOfSecondaryNode.png}
-\caption{Structuring of the Secondary 
+\caption{Structuring of Secondary 
 NameNode~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:secnode}
 \end{figure*}
 
 The Figure~\ref{s:secnode} shows the structuring of the secondary NameNode. 
-The secondary NameNode will be independently validating and 
-updating the replica of the fsimage subsequent to the changes 
-that are made in the edit log. If the active node fails in the 
-system then NameNode will not need to rebuild the edit 
-log on top of the fsimage. The administrators of the 
-cluster can easily retrieve the updated copy of the 
-fsImage from the 
-SecondaryNameNode~\cite{hid-sp18-412-hadoop-architecture-overview}.
+Secondary NameNode independently validates and 
+updates replicas of fsimage subsequently to the changes 
+that are made in edit log. If active node fails in
+system then NameNode needs to rebuild edit 
+log on top of fsimage. Although, administrators of  
+cluster can easily retrieve updated copy of
+fsImage from Secondary 
+Namenode~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
 The \verb|secondaryNameNode| also provides the advantage and 
-benefit of the faster recovery in case of the NameNode failure. 
-Although, the SecondaryNameNode 
+benefit of the faster recovery in case of NameNode failure. 
+Although, \verb|SecondaryNameNode|
 will not provide automatic failover 
 load balancing~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
 
 \subsection{MapReduce}
-The Mapreduce is the effective framework that can be 
-utilized to process the large datasets in the distributed way. 
+The Mapreduce is an effective framework that can be 
+utilized to process large datasets in the distributed way. 
 Basically, there are three operations in the MapReduce model, 
-Map the input dataset into the collective pairs, 
-shuffle the mapped data and handover the data to the 
+Map input dataset into the collective pairs, 
+shuffle mapped data and handover the data to the 
 reducers then subsequently reduce the over all pairs 
-with the same number of keys. The example of the 
+with same number of keys. The example of 
 map-reduce job correspond to the WordCount example 
 which is again illustrated in this paper that has 
-been followed to analyse the performance of the hadoop 
+been followed to analyse the performance of hadoop 
 and spark on the different platforms. 
-The high-level specification or the unit in the 
-MapReduce framework is the Job. The each of the 
-job composes of the one or 
+The high-level specification or unit in 
+MapReduce framework is Job. The each of 
+job composes of one or 
 more map or the reduce tasks~\cite{hid-sp18-412-hadoop-architecture-overview}. 
 
 The following Figure~\ref{s:mapreduce} 
 shows the perfect example of the 
-MapReduce job with respect to the WordCount application.
+MapReduce job with respect to WordCount application.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/WordCountMapReduce.png}
@@ -676,21 +677,22 @@ Job~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:mapreduce}
 
 \subsubsection{Related Frameworks}
 There are other frameworks that perform and accomplish the 
-MapReduce jobs other than hadoop. The most used frameworks 
-other than the Hadoop are the Apache Spark and Apache Tez. 
-This paper also describes the Apache spark and the relevant 
-analysis that is performed with respect to the Apache Spark 
-with the different computing platforms and the 
+MapReduce jobs in a similar way as hadoop. 
+The most used frameworks 
+other than the Hadoop are Apache Spark and Apache Tez. 
+This paper also describes Apache spark and other relevant 
+analysis that is performed with respect to Apache Spark 
+with different computing platforms and
 different computing resources~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
 \subsection{YARN}
-The major idea of the YARN is to divide the functionalities of the 
-resource management and the job scheduling/management into 
-the separate daemons. The very basic and the primary idea 
+The major idea of the YARN is to divide the functionalities of
+resource management and scheduling/management into 
+separate daemons. The very basic and the primary idea 
 is to have the global resource manager (RM) and the per-application master. 
-The application would be treated as the single job 
-or the Directed Acyclic 
-graph of the Jobs~\cite{hid-sp18-412-YARN_Architecture}.
+The application would be treated as a single job 
+or Directed Acyclic 
+graph of Jobs~\cite{hid-sp18-412-YARN_Architecture}.
 
 The following figure describes the architecture 
 of the YARN~\ref{s:archiyarn}.
@@ -702,32 +704,31 @@ Architecture~\cite{hid-sp18-412-YARN_Architecture}}\label{s:archiyarn}
 \end{figure*}
 
 \subsubsection{Data Computation Framework}
-The data computation framework is formed by the Resource Manager 
-and the NodeManager. The major authority is possessed  
-by the ResourceManager that will possess the ultimate 
-authority that will assign the resources to 
-the applications in the system. In contrast, 
-the NodeManager is the framework that is assigned 
-to per machine which is responsible for monitoring of 
-the containers and the resource allocation with 
-respect to the cpu, memory, disk and the network, 
-which would report the 
-same to the Resource Manager /Scheduler~\cite{hid-sp18-412-YARN_Architecture}.
+The data computation framework is formed by resource manager 
+and node manager. The major authority is possessed  
+by resource manager to assign resources to all 
+applications in a system. In contrast, 
+Node manager is framework that gets assigned 
+to each machine and is responsible for monitoring of 
+containers and resource allocation with 
+respect to cpu, memory, disk 
+and network~\cite{hid-sp18-412-YARN_Architecture}.
 
 
 \subsubsection{Resource Manager}
-The following figure 6 describes the architecture of the 
-resource manager and displays the high-level view of the 
-resource manager. The resource manager (RM) is assigned the 
-responsibility of tracking the resources in the cluster and 
+The following figure~\ref{s:archires} describes 
+architecture of the 
+resource manager and displays high-level view of 
+resource manager. The resource manager (RM) is assigned
+responsibility of tracking the resources in cluster and 
 the scheduling jobs. The standby resource manager provides 
-the failover load balancing for the Active ResourceManager. 
+failover load balancing for active resource manager. 
 The standby resource manager will be waiting to take 
-over in case of any of the disaster with 
+over in case of any of disaster with 
 respect to the active resource manager~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure describes the architecture 
-of the Resource Manager~\ref{s:archires}.
+The following figure describes architecture 
+of resource manager~\ref{s:archires}.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/YARNResourceManager.png}
@@ -737,13 +738,14 @@ Architecture~\cite{hid-sp18-412-ResourceManager_Architecture}}\label{s:archires}
 \end{figure*}
 
 \subsubsection{Node Manager}
-This node manager is the slave in the system infrastructure. 
-When the node manager starts it indicates the Resource Manager 
-that it is gone live. At the continuous periodic times it will 
-send the signals to the Resource Manager indicating that it is live. 
-At the next depth, the container is the fraction of the Node Manager 
-and it is in turn used by the 
-client to run the application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
+Node manager acts like a slave in a 
+system infrastructure. 
+When the node manager starts it indicates resource manager 
+that it has gone live. At continuous periodic times node manager
+sends respective signals to Resource Manager indicating that it is live. 
+At next level of depth, container is fraction of node manager 
+and it is in turn used by 
+client to run an application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
 
 The following figure displays the division of the Node Manager into 
 containers~\ref{s:archinode}.
@@ -751,24 +753,25 @@ containers~\ref{s:archinode}.
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/nodemanager.png}
 \caption{Node 
-Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
+Manager 
+Division~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
 \end{figure*}
 
 \section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
 
-The figure indicates the architecture of the Apache Hadoop on the 
+The figure ~\ref{s:archihadoop} depicts 
+architecture of Apache Hadoop on 
 Raspberry Pi nodes. There are basically 5 nodes which have been 
-divided into the master and the workers. 
-The YARN is deployed on top of the Hadoop. 
+divided into the master and workers. 
+YARN is deployed on top of Apache Hadoop. 
 There are five nodes and 4 of them are treated and 
-configured as the workers and one node is configured as the 
-master. Further, Java and Python WordCount application is run 
+configured as workers and one node is configured as 
+master. Further, Java and Python WordCount applications are run 
 in order to benchmark, evaluate and compare the performance
- of the Hadoop and spark applications.
+ of Hadoop and spark applications.
 
-The following figure describes the architecture of the Apache 
-Hadoop Architecture 
-Deployed on the Raspberry Pi 3~\ref{s:archihadoop}.
+Following figure~\ref{s:archihadoop} describes architecture of Apache 
+Hadoop Deployed on Raspberry Pi 3.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/RaspberryPiSpark.png}
@@ -778,51 +781,51 @@ RaspberryPi 3}\label{s:archihadoop}
 
 \section{Docker}
 
-The docker provides the containerization at the operating systems level. 
+The docker provides the containerization at operating systems level. 
 The Docker virtualization system is developed by Docker. Inc. 
-In order to effectively develop and maintain the containers easily
- on the single Linux Instance the docker provides the effective
- framework to run the different capability
- containers in the single machine~\cite{hid-sp18-412-docker_wikepedia}. 
-The docker consists of the three following components:-
+To effectively develop and maintain the containers easily
+ on the single Linux Instance docker provides effective
+ framework to run different capability
+ containers in a single machine~\cite{hid-sp18-412-docker_wikepedia}. 
+The docker consists of three following components:-
 
 \subsection{Software}
-The docker has the major Daemon process called as the dockerd: 
-which will effectively manage the docker containers and in-turn 
-handle the container objects. The docker client called as the docker
- helps the users to manage and provides the diverse range of options
- to interact with the containers~\cite{hid-sp18-412-docker_wikepedia}. 
+The docker has the major Daemon process called as \verb|dockerd| 
+which will effectively manage the docker containers and in turn 
+handle container objects. Docker client called as docker
+ helps users to manage and provides diverse range of options
+ to interact with containers~\cite{hid-sp18-412-docker_wikepedia}. 
 
 \subsection{Objects}
-The various of the objects in the docker are mainly images,
- containers and the services. 
-The docker container acts as a black-box that runs 
-the applications virtually. These containers can be managed by 
-the docker API service. The docker images are the templates 
-that can be used to build the containers and acts as a base
- framework to the containers. The docker service is process
- that will effectively allow the numerous containers to be
- extended across the 
+The various objects in docker are mainly images,
+ containers and services. 
+Docker container acts as a black-box that runs 
+applications virtually. These containers can be managed by 
+the docker API service. The docker images are templates 
+that can be used to build containers and acts as a base
+ framework. The docker service is a process
+ that will effectively allow numerous containers to be
+ extended across
 different docker Daemons~\cite{hid-sp18-412-docker_wikepedia}. 
 
 \subsection{Registries}
 Registries are of two types, public and private. 
 At present the Docker hub and the Docker Cloud are 
-the two of the main registries. The Docker 
-Hub provides the different images to be tagged  
+the two main registries. Docker 
+Hub provides different images to be tagged  
 and pulled~\cite{hid-sp18-412-docker_wikepedia}.
 
 \subsection{Docker-Spark}
-This project mainly targeted to benchmark and evaluate 
-the performance of the Apache Hadoop and the standalone 
-spark on the different platforms. Docker was one of the 
+This project is mainly targeted to benchmark and evaluate 
+the performance of Apache Hadoop and standalone 
+spark on different platforms. Docker was one
 platform that was selected in this project to 
-evaluate the performance of the application with these frameworks.
+evaluate the performance of an application with these frameworks.
 The dockerized WordCount program is run on the Ununtu 17.10 platform. 
 
 \subsection{Docker-Spark Architecture} 
 The following figure~\ref{s:archidocker} describes the implementation of 
-the Docker-Spark architecture that is deployed on the Ubuntu 17.10.
+the docker spark architecture that is deployed on Ubuntu 17.10.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/dockerspark.png}
