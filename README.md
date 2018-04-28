@@ -10,7 +10,7 @@ Apache Spark Standalone
 * https://github.com/cloudmesh-community/hid-sp18-412/tree/master/project-code/spark-standalone
 
 Ubuntu-Docker 
-** https://github.com/cloudmesh-community/hid-sp18-412/tree/master/project-code/docker-spark-ubuntu-platform
+* https://github.com/cloudmesh-community/hid-sp18-412/tree/master/project-code/docker-spark-ubuntu-platform
 
 ### The initial configurations need to be performed in the raspberry Pi nodes in order to install the Apache Hadoop and Apache Spark in standalone mode, that was developed by our team at the following link:
 
