@@ -57,7 +57,7 @@
   
 \begin{abstract}
 
-In this modern era of big data computing embraces the potential benefits such as 
+Big data and cloud computing computing embraces the potential benefits such as 
 high volume, high velocity and high variety. Where as in distributed computing, 
 a task is processed over two or more computers in the network within distributed
  system by breaking down the problem into many parallel smaller task. This 
@@ -73,7 +73,8 @@ a task is processed over two or more computers in the network within distributed
 
 \end{abstract}
 
-\keywords{hid-sp18-406,hid-sp18-408,hid-sp18-410,hid-sp18-412,Spark,Raspberry Pi,Hadoop,Spark Cluster}
+\keywords{hid-sp18-406,hid-sp18-408,hid-sp18-410,hid-sp18-412,
+Spark,Raspberry Pi,Hadoop,Spark Cluster}
 
 
 \maketitle
@@ -192,19 +193,22 @@ according to the business needs and suitable software.
 
 
 \subsection{Overview of Hadoop Modules}
-Apache's hadoop framework in composed of the four main modules: 
-a)Hadoop Common: which hold the libraries and utilities required by the Hadoop 
+Apache's hadoop framework in composed of the four main modules:
+
+\begin{itemize}
+\item Hadoop Common: This holds the libraries and utilities required by the Hadoop 
 modules.
-b)Hadoop Distributed File System: which manages to store data on commodity 
+\item Hadoop Distributed File System: which manages to store data on commodity 
 machines, which is helpful in providing efficient bandwidth across the cluster.
-c) Hadoop Yarn: this is basically a resource management platform which will be 
+\item Hadoop Yarn: this is basically a resource management platform which will be 
 responsible managing compute resources in clusters and using them for scheduling
 of user's applications.
-d) Hadoop MapReduce: this is the programming module required for large scale 
+\item Hadoop MapReduce: This is the programming module required for large scale 
 data processing.
 The main principle behind the above mentioned modules of Hadoop is that the 
 common scenarios of  hardware failures is handled by software in the framework
 ~\cite{hid-sp18-406-hadoop-intro5}.
+\end{itemize}
 
 \subsection{Importance of Yarn}
 Yet Another Resource Negotiator (YARN) is one of the most important components 
@@ -239,7 +243,9 @@ center of hadoop  and definitely  the most important foundational component
 ~\cite{hid-sp18-406-hadoop-intro7}.
 
 \subsection{Advantages of Hadoop}
-1. Scalable : 
+\begin{itemize}
+
+\item Scalable : 
 Hadoop is specifically designed to have a very flat scalability structure. 
 Once After a Hadoop program is written and is functioning on ten nodes, very 
 little work is required for that same program to run on a much larger setup. 
@@ -251,27 +257,27 @@ that operate in parallel. Hadoop enables businesses to run applications on
 thousands of nodes involving thousands of terabytes of data
 ~\cite{hid-sp18-406-hadoop-intro8}.
 
-2.Advanced data analysis can be done in-house : 
+\item Advanced data analysis can be done in-house: 
 With Hadoop environment its capable to work with large data sets and customize 
 the outcome without having to outsource the task. Keeping operations in-house 
 helps organizations be more agile, while also avoiding the ongoing operational 
 expense of outsourcing.
 
-3. Organizations can fully leverage their data : 
+\item Organizations can fully leverage their data: 
 With Hadoop systems, organizations can take full advantage of all their data – 
 structured and unstructured, real-time and historical.Earlier with traditional 
 legacy systems, all the available data and inputs were not used to do analysis 
 to support business activity. Leveraging adds more value to the data itself and 
 improves the return on investment (ROI) for the legacy systems.
 
-4. Flexible architecture : 
+\item Flexible architecture: 
 Some of the tasks that Hadoop is being used for today were formerly run by 
 expensive computer systems. Hadoop commonly runs on commodity hardware. Because 
 of big data standard, Hadoop is supported by a large and competitive solution 
 provider community, which protects customers from vendor lock-in
 ~\cite{hid-sp18-406-hadoop-intro9}.
 
-5. Cost Effective : 
+\item Cost Effective: 
 Hadoop systems provides cost effective storage solution for businesses. The 
 problem with traditionalsystems is that it is extremely cost prohibitive to 
 process such massive volumes of data. To reduce costs, many companies in the 
@@ -283,7 +289,7 @@ expanding datasets. It is designed to scale-out architecture that can affordably
 store all company's data for use sometime later. This saves a lot of cost and 
 improves the storage capability tremendously.
 
-6. Enhances Speed : 
+\item Enhances Speed: 
 Hadoop's unique storage method is based on a distributed file system that 
 basically maps data wherever it is located on a cluster. The tools for data 
 processing are often on the same servers where the data is located, resulting 
@@ -291,7 +297,7 @@ in much faster data processing. If you’re dealing with large volumes of
 unstructured data, it can efficiently process terabytes of data in just minutes
 ~\cite{hid-sp18-406-hadoop-intro10}.
 
-7. Great Data Reliability : 
+\item Great Data Reliability: 
 Data reliability is one aspect that no organization wants to compromise on. 
 Hadoop provides complete confidence and reliability; in a scenario where data 
 loss happens on a regular basis, HDFS helps you solve the issue. It stores and 
@@ -300,7 +306,7 @@ costs down. Whether you are a start-up, a government organization, or an
 internet giant, Hadoop has proved its mettle when it comes to strong data 
 reliability in a variety of production applications at full scale.
 
-8. Comprehensive Authentication and Security : 
+\item Comprehensive Authentication and Security: 
 All businesses are looking for software that makes their work safe, secure and 
 authenticated. When it comes to authentication and security, Hadoop provides an 
 advantage over other software. Its HBase security, along with HDFS and 
@@ -309,7 +315,7 @@ securing an entire system from unwanted or illegal access. Security is the top
 priority of every organization. Any unlawful access to data is sure to harm 
 business dealings and operations~\cite{hid-sp18-406-hadoop-intro11}.
 
-9. Flexible with Range of data sources : 
+\item Flexible with Range of data sources: 
 Hadoop enables businesses to easily access new data sources and tap into 
 different types of data. The data collected from various sources will be of 
 structured or unstructured form. This means organizations can use Hadoop to 
@@ -320,13 +326,16 @@ this time as it can derive valuable data from any form of data. It also has a
 variety of functions such as data warehousing, fraud detection, market campaign 
 analysis etc ~\cite{hid-sp18-406-hadoop-intro12}.
 
-10. Resilient to failure : 
+\item Resilient to failure: 
 A key advantage of using Hadoop is its fault tolerance. When data is sent to an 
 individual node, that data is also replicated to other nodes in the cluster, 
 which means that in the event of failure, there is another copy available for 
 use~\cite{hid-sp18-406-hadoop-intro13}.
 
+\end{itemize}
+
 \section{Introduction to Apache Spark}
+
 Apache Spark is a cluster computing framework developed 
 at the University of California, Berkeley. It is maintained as an open software 
 by the Apache Software Foundation. It provides an interface for programming with 
@@ -413,6 +422,7 @@ Pregel abstraction and a MapReduce style API~\cite{hid-sp18-408-Spark}.
 
 
 \section{Applications of Spark}
+
 The applications of Apache Spark range from Streaming Data, Machine Learning, 
 Interactive Analysis and Fog Computing.
 
@@ -453,6 +463,7 @@ and GraphX, Spark qualifies as a fog computing solution~\cite{hid-sp18-408-Spark
 
 
 \section{Raspberry Pi}
+
 Raspberry Pi is a series of mini single-board computers. 
 It was developed by Raspberry Pi Foundation to promote teaching of basic 
 computer science. Till date, various Raspberry Pi's have been released with a 
@@ -466,7 +477,8 @@ Ubuntu, Windows 10 IoT Core and specialized media center distributions. It
 supports Python and Scratch as the main programming language and also supports 
 many other languages~\cite{hid-sp18-408-Raspberry-Pi}.
 
-\section{Difference between Spark and MapReduce} 
+\section{Difference between Spark and MapReduce}
+
 Spark keeps data in memory whereas MapReduce keeps shuffling things. MapReduce 
 takes a long time to write things to disk and also to read them back. This makes
 MapReduce slow. For SQL queries, a chain of MapReduce operations are usually 
@@ -479,6 +491,7 @@ Spark is easier and is flexible. Spark provides a lot of instructions at a
 higher level of abstraction than what MapReduce provides~\cite{hid-sp18-408-Difference}.
 
 \section{Hadoop Architecture}
+
 \subsection{General Introduction about the Hadoop Architecture}
 The Apache Hadoop is distributed computation framework that that provides 
 the storage and capability of running the programs on the multiple 
@@ -513,8 +526,10 @@ There are mainly two models of the HDFS architecture
 which varies based on the characteristics and the version 
 of the Hadoop, they are 
 as follows~\cite{hid-sp18-412-hadoop-architecture-overview}:
--Vanilla HDFS
--High Availability HDFS
+\begin{itemize}
+\item Vanilla HDFS
+\item High Availability HDFS
+\end{itemize}
 
 The main basic architecture of the HDFS follows a 
 leader/follower pattern. A cluster would be 
@@ -624,7 +639,7 @@ cluster can easily retrieve the updated copy of the
 fsImage from the 
 SecondaryNameNode~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
-The secondaryNameNode also provides the advantage and 
+The \verb|secondaryNameNode| also provides the advantage and 
 benefit of the faster recovery in case of the NameNode failure. 
 Although, the SecondaryNameNode 
 will not provide automatic failover 
@@ -740,6 +755,7 @@ Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
 \end{figure*}
 
 \section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
+
 The figure indicates the architecture of the Apache Hadoop on the 
 Raspberry Pi nodes. There are basically 5 nodes which have been 
 divided into the master and the workers. 
@@ -761,6 +777,7 @@ RaspberryPi 3}\label{s:archihadoop}
 \end{figure*}
 
 \section{Docker}
+
 The docker provides the containerization at the operating systems level. 
 The Docker virtualization system is developed by Docker. Inc. 
 In order to effectively develop and maintain the containers easily
@@ -770,9 +787,9 @@ In order to effectively develop and maintain the containers easily
 The docker consists of the three following components:-
 
 \subsection{Software}
-The docker has the major Daemon process called as the “dockerd: 
+The docker has the major Daemon process called as the dockerd: 
 which will effectively manage the docker containers and in-turn 
-handle the container objects. The docker client called as the “docker”
+handle the container objects. The docker client called as the docker
  helps the users to manage and provides the diverse range of options
  to interact with the containers~\cite{hid-sp18-412-docker_wikepedia}. 
 
@@ -842,7 +859,7 @@ Spark provides support for modern languages such as Java, Python, Scala, SQl and
 
 Relational databases (RDBMS) which usually comprises of the structured query 
 language (SQL) and the SQL queries are normally well understood by developers, 
-Engineers, Data Scientists and Academia. The Apache Spark module 'Spark SQ' 
+Engineers, Data Scientists and Academia. The Apache Spark module Spark SQ 
 offers native support for SQL. Spark provides excellent support and simplifies 
 whole process of making query request to the data that is stored in the Spark's 
 native RDD (Resilient Distributed Dataset) model along with data from other 
