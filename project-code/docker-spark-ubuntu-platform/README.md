@@ -1,23 +1,22 @@
 ## Git clone the project and navigate to the directory hid-sp18-412/project-code/docker-spark-ubuntu-platform/
 
-##Build all the containers using the following command 
+### Build all the containers using the following command 
 	
 	make build-all
 
-##Run the master using the command 
+### Run the master using the command 
 
 	make run-master
 
-##Run the workers using the command 
+### Run the workers using the command 
 
 	make run-workers 
 
-##Login to the master using 
+### Login to the master using 
 
 	make login-master
 
-##Next few of the configurations need to be performed manually in the master container 
-
+## Next few of the network level configurations need to be performed manually in the master container 
 ### Navigate to the /spark/conf
 	
 	cd spark/conf
@@ -71,4 +70,5 @@ https://www.dropbox.com/s/flids2li7gmt2je/Docker-Spark-Results.PNG?dl=0
 ### References: 
 The dockerfiles and images used to build the Docker-Spark architeture  
 were referenced from the following github repository link and updated accordingly 
-to suit the requirements <https://github.com/big-data-europe/docker-spark?files=1>
+to suit the requirements 
+(https://github.com/big-data-europe/docker-spark?files=1)
