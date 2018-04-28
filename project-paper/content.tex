@@ -73,8 +73,7 @@ a task is processed over two or more computers in the network within distributed
 
 \end{abstract}
 
-\keywords{Spark, Raspberry Pi, Futuresystems, Docker, Hadoop 
-V/S Spark, Spark Cluster}
+\keywords{hid-sp18-406,hid-sp18-408,hid-sp18-410,hid-sp18-412,Spark,Raspberry Pi,Hadoop,Spark Cluster}
 
 
 \maketitle
@@ -325,7 +324,7 @@ analysis etc ~\cite{hid-sp18-406-hadoop-intro12}.
 A key advantage of using Hadoop is its fault tolerance. When data is sent to an 
 individual node, that data is also replicated to other nodes in the cluster, 
 which means that in the event of failure, there is another copy available for 
-use ~\cite{hid-sp18-406-hadoop-intro13}.
+use~\cite{hid-sp18-406-hadoop-intro13}.
 
 \section{Introduction to Apache Spark}
 Apache Spark is a cluster computing framework developed 
@@ -334,8 +333,7 @@ by the Apache Software Foundation. It provides an interface for programming with
 data parallelization and also fault tolerance. Spark's architecture is based on 
 Resilient Distributed Dataset (RDD) which is a read-only set of data items split
 over a cluster of machines. In short, instead of the code getting the data for 
-computation, it goes to the location where the data is present
-\cite{hid-sp18-408-Spark}. 
+computation, it goes to the location where the data is present~\cite{hid-sp18-408-Spark}. 
 
 \subsection{RDD}
 RDD is a fundamental data structure of Spark. It is an immutable distributed 
@@ -347,7 +345,7 @@ RDD's can be created through operations on data on storage or using other RDD's.
 RDD's are a collection of elements which are fault-tolerant and operate 
 parallely. RDD's can be created in two ways - parallelizing an existing 
 collection in the driver program, or referencing a dataset in an external 
-storage system \cite{hid-sp18-408-Spark-RDD}.
+storage system~\cite{hid-sp18-408-Spark-RDD}.
 
 Spark and its RDD's were developed to overcome the limitations of Map-Reduce in 
 Hadoop which forces a linear dataflow on distributed programs. Map-Reduce 
@@ -368,7 +366,7 @@ distributed storage system. For cluster management, Spark supports standalone
 cluster, Hadoop Yarn and Apache Mesos. To provide distributed storage, Spark 
 can be integrated with a variety of frameworks like Hadoop Distributed File 
 System (HDFS), MapR File System (MapR-FS), Cassandra, Kudu. Also, a custom 
-solution can be implemented and integrated into Spark. 
+solution can be implemented and integrated into Spark~\cite{hid-sp18-408-Spark}. 
 
 \subsection{Spark Core}
 Spark has a core component called the Spark Core that provides distributed task 
@@ -382,7 +380,7 @@ data loss, it can be reconstructed. RDD's support any type of Python, Scala or
 Java objects. Along with the RDD style of programming, Spark provides two 
 restricted forms of shared variables - broadcast variables and accumulators. 
 Broadcast variables reference read-only data and makes it available on all 
-nodes. Accumulators can be used to program reduce part in an imperative style. 
+nodes. Accumulators can be used to program reduce part in an imperative style~\cite{hid-sp18-408-Spark}. 
 
 \subsection{Spark SQL}
 Spark SQL is a component that is built on top of Spark Core that provides a data 
@@ -394,7 +392,7 @@ in data in mini-batches and performs RDD transformations on those mini-batches
 of data. This enables the same set of application code written for batch 
 analytics to be used for streaming analytics as well enabling easy 
 implementation of lambda architecture. Spark Streaming has support to consume 
-from Kafka, Twitter, Flume, Kinesis and TCP/IP sockets.
+from Kafka, Twitter, Flume, Kinesis and TCP/IP sockets~\cite{hid-sp18-408-Spark}.
 
 \subsection{Spark MLlib}
 Spark MLlib (Machine Learning Library) is a distributed machine learning 
@@ -403,7 +401,7 @@ statistical algorithms have been implemented in MLlib which facilitates large
 scale machine learning pipelines. Some of the supervised and unsupervised 
 Machine Learning algorithms implemented are Support Vector Machine, Logistic 
 Regression, Linear Regression, Decision Trees, Naive Bayes, Latent Dirichlect 
-Allocation. 
+Allocation~\cite{hid-sp18-408-Spark}.
 
 
 \subsection{Spark GraphX}
@@ -411,7 +409,7 @@ GraphX is a distributed graph processing framework built on top of Apache Spark.
 Since RDD's are immutable, graphs are also immutable and hence GraphX is 
 unsuitable for graphs that need to be updated. GraphX provides two seperate 
 application programming interface for implementing parallel algorithms - a 
-Pregel abstraction and a MapReduce style API \cite{hid-sp18-408-Spark}.
+Pregel abstraction and a MapReduce style API~\cite{hid-sp18-408-Spark}.
 
 
 \section{Applications of Spark}
@@ -438,7 +436,7 @@ Machine Learning: Apache Spark comes integrated with a framework for performing
 advanced analytics. It helps users run repeated queries on data sets which 
 amounts to processing machine learning algorithms. Spark supports machine 
 learning through its framework called MLlib which can perform clustering, 
-classification among many other algorithms. 
+classification among many other algorithms~\cite{hid-sp18-408-Spark-Use-Case}. 
 
 
 \subsection{Spark Interactive Analysis}
@@ -451,8 +449,7 @@ of performing computation on the edge of the network . However, this creates a
 lot of complexities for processing decentralized data since it requires low 
 latency along with massive parallel processing for running machine learning 
 algorithms.  But with Spark Streaming, real-time querying tool (Shark), MLlib 
-and GraphX, Spark qualifies as a fog computing solution
-\cite{hid-sp18-408-Spark-Use-Case}.
+and GraphX, Spark qualifies as a fog computing solution~\cite{hid-sp18-408-Spark-Use-Case}.
 
 
 \section{Raspberry Pi}
@@ -467,9 +464,7 @@ supported and 3.5 mm phono jack supports audio output. The Raspberry Pi
 Foundation provides Raspbian, a Debian-based Linux distribution along with 
 Ubuntu, Windows 10 IoT Core and specialized media center distributions. It 
 supports Python and Scratch as the main programming language and also supports 
-many other languages
-\cite{hid-sp18-408-Raspberry-Pi}.
-
+many other languages~\cite{hid-sp18-408-Raspberry-Pi}.
 
 \section{Difference between Spark and MapReduce} 
 Spark keeps data in memory whereas MapReduce keeps shuffling things. MapReduce 
@@ -481,8 +476,7 @@ executes faster since it has data in memory and requires less Input-Output
 operations. Spark has a Map and a Reduce function like MapReduce, but it also 
 has richer features such as Filter, Join and Group-by. Hence development in 
 Spark is easier and is flexible. Spark provides a lot of instructions at a 
-higher level of abstraction than what MapReduce provides
-\cite{hid-sp18-408-Difference}.
+higher level of abstraction than what MapReduce provides~\cite{hid-sp18-408-Difference}.
 
 \section{Hadoop Architecture}
 \subsection{General Introduction about the Hadoop Architecture}
@@ -528,13 +522,16 @@ specifically composed of a single Namenode,
 an optional secondary node and the 
 random number of the data nodes~\cite{hid-sp18-412-HDFS-Architecture}.
 
-The following Figure 1 displays the vanilla hadoop deployment.
+The structuring of Vanilla Hadoop Deployment is 
+shown in Figure~\ref{s:vaniarchi}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/vanilla.png}\label{s:vani_archi}
-\end{center}
-\textbf{Figure 1: Vanilla Hadoop Architecture
-~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/vanilla.png}
+\caption{Vanilla 
+Hadoop 
+Architecture
+~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:vaniarchi}
+\end{figure*}
 
 \subsubsection{Namenode and DataNodes}
 The HDFS cluster composes of a single Namenode, this node acts as 
@@ -557,12 +554,13 @@ The execution of the tasks with
  The read and write requests from the clients of the file system
   are fulfilled by the datanodes~\cite{hid-sp18-412-HDFS-Architecture}.
 
-The following Figure 2 displays the HDFS Architecture.
+The HDFS architecture is shown in Figure~\ref{s:archihdfs}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/HDFSarchi.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 2: HDFS Architecture~\cite{hid-sp18-412-HDFS-Architecture}} 
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/HDFSarchi.png}
+\caption{HDFS 
+Architecture~\cite{hid-sp18-412-HDFS-Architecture}}\label{s:archihdfs}
+\end{figure*}
 
 The general platform that the namenodes and the datanodes run are on 
 the GNU/Linux operating system. The main primary language used to 
@@ -606,16 +604,17 @@ This avoids the redundant creation of the
 new fsimage every time the 
 namespace is modified~\cite{hid-sp18-412-hadoop-architecture-overview}. 
 
-The structuring of the secondary NameNode is shown in the Figure 3.
+The structuring of the secondary NameNode is 
+shown in the Figure~\ref{s:secnode}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/StructureOfSecondaryNode.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 3: Structuring of the Secondary NameNode
-~\cite{hid-sp18-412-hadoop-architecture-overview}}
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{images/StructureOfSecondaryNode.png}
+\caption{Structuring of the Secondary 
+NameNode~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:secnode}
+\end{figure*}
 
-
-The Figure 3 shows the structuring of the secondary NameNode. 
+The Figure~\ref{s:secnode} shows the structuring of the secondary NameNode. 
 The secondary NameNode will be independently validating and 
 updating the replica of the fsimage subsequent to the changes 
 that are made in the edit log. If the active node fails in the 
@@ -648,15 +647,17 @@ The high-level specification or the unit in the
 MapReduce framework is the Job. The each of the 
 job composes of the one or 
 more map or the reduce tasks~\cite{hid-sp18-412-hadoop-architecture-overview}. 
-The following Figure 4 the perfect example of the MapReduce 
-job with respect to the 
-WordCount application~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/WordCountMapReduce.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 4: Word Count MapReduce 
-Job~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+The following Figure~\ref{s:mapreduce} 
+shows the perfect example of the 
+MapReduce job with respect to the WordCount application.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/WordCountMapReduce.png}
+\caption{Word Count 
+MapReduce 
+Job~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:mapreduce}
+\end{figure*}
 
 \subsubsection{Related Frameworks}
 There are other frameworks that perform and accomplish the 
@@ -676,6 +677,15 @@ The application would be treated as the single job
 or the Directed Acyclic 
 graph of the Jobs~\cite{hid-sp18-412-YARN_Architecture}.
 
+The following figure describes the architecture 
+of the YARN~\ref{s:archiyarn}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/YARNArchitecture.png}
+\caption{YARN 
+Architecture~\cite{hid-sp18-412-YARN_Architecture}}\label{s:archiyarn}
+\end{figure*}
+
 \subsubsection{Data Computation Framework}
 The data computation framework is formed by the Resource Manager 
 and the NodeManager. The major authority is possessed  
@@ -689,12 +699,6 @@ respect to the cpu, memory, disk and the network,
 which would report the 
 same to the Resource Manager /Scheduler~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure 5 describes the architecture of the YARN.
-
-\begin{center}
-\includegraphics[scale=0.35]{images/YARNArchitecture.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 5: Architecture of YARN~\cite{hid-sp18-412-YARN_Architecture}} 
 
 \subsubsection{Resource Manager}
 The following figure 6 describes the architecture of the 
@@ -707,13 +711,15 @@ The standby resource manager will be waiting to take
 over in case of any of the disaster with 
 respect to the active resource manager~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure 6 describes the architecture of the Resource Manager.
+The following figure describes the architecture 
+of the Resource Manager~\ref{s:archires}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/YARNResourceManager.png}\label{s:res}
-\end{center}
-\textbf{Figure 6: Architecture of 
-Resource Manager~\cite{hid-sp18-412-ResourceManager_Architecture}}
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/YARNResourceManager.png}
+\caption{Resource 
+Manager 
+Architecture~\cite{hid-sp18-412-ResourceManager_Architecture}}\label{s:archires}
+\end{figure*}
 
 \subsubsection{Node Manager}
 This node manager is the slave in the system infrastructure. 
@@ -724,12 +730,14 @@ At the next depth, the container is the fraction of the Node Manager
 and it is in turn used by the 
 client to run the application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
 
-The following figure 7 displays the division of 
-the Node Manager into containers.
-\begin{center}
-\includegraphics[scale=0.35]{images/nodemanager.png}\label{s:res}
-\end{center}
-\textbf{Figure 7: Node Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}
+The following figure displays the division of the Node Manager into 
+containers~\ref{s:archinode}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/nodemanager.png}
+\caption{Node 
+Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
+\end{figure*}
 
 \section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
 The figure indicates the architecture of the Apache Hadoop on the 
@@ -742,12 +750,15 @@ master. Further, Java and Python WordCount application is run
 in order to benchmark, evaluate and compare the performance
  of the Hadoop and spark applications.
 
-The following figure 8 displays the division 
-of the Node Manager into containers.
-\begin{center}
-\includegraphics[scale=0.35]{images/RaspberryPiSpark.png}\label{s:rasp}
-\end{center}
-\textbf{Figure 8: Hadoop Architecture deployed on Rasberry Pi 3}
+The following figure describes the architecture of the Apache 
+Hadoop Architecture 
+Deployed on the Raspberry Pi 3~\ref{s:archihadoop}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/RaspberryPiSpark.png}
+\caption{Apache Hadoop Deployment Architecture on 
+RaspberryPi 3}\label{s:archihadoop}
+\end{figure*}
 
 \section{Docker}
 The docker provides the containerization at the operating systems level. 
@@ -790,24 +801,16 @@ the performance of the Apache Hadoop and the standalone
 spark on the different platforms. Docker was one of the 
 platform that was selected in this project to 
 evaluate the performance of the application with these frameworks.
+The dockerized WordCount program is run on the Ununtu 17.10 platform. 
 
 \subsection{Docker-Spark Architecture} 
-The following figure 9 describes the implementation of the 
-docker-spark architecture that is deployed on the Ubuntu 17.10.
-\begin{center}
-\includegraphics[scale=0.35]{images/dockerspark.png}\label{s:dockerspark}
-\end{center}
-\textbf{Figure 9: Architecture of Docker-Spark Deployment}
+The following figure~\ref{s:archidocker} describes the implementation of 
+the Docker-Spark architecture that is deployed on the Ubuntu 17.10.
 
-
-
-
-
-
-
-
-
-
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/dockerspark.png}
+\caption{Docker Spark}\label{sa:archidocker}\label{s:archidocker}
+\end{figure*}
 
 
 
@@ -821,7 +824,7 @@ Spark offers great features in terms of speed, simplicity and high level support
  for development of current environments and storage systems. They have wide 
  range of developers that embrace the ongoing development for one of the 
  Apache's largest and most active platform with around 500 contributors who are 
- responsible for their code in the software code release.
+ responsible for their code in the software code release~\cite{hid-sp18-410-spark-architecture}.
 
 \subsection{Support for programming languages}
 Spark provides very easy interface and comprehensive support for the enhancement
@@ -849,7 +852,7 @@ Spark also provides extensive support for data science enriched language called
 R. It has a package named SparkR which first appeared in the release of 1.4 
 apache spark. Due to enormous popularity in the data science, this package 
 proves to be one of the important features of Apache Spark
-~\cite{hid-sp18-410-spark-architecture}
+~\cite{hid-sp18-410-spark-architecture}.
 
 \subsection{Spark deployment options}
 Spark is very easy to download and install on a laptop or virtual machine. 
@@ -864,7 +867,7 @@ Yarn could be used to execute arbitrary applications on a hadoop cluster.
 There needs to be one application master node and several arbitrary number of 
 containers acting as workers. Workers are responsible for the execution of 
 application where as the master makes requests to the workers and monitors the 
-progress and status of the work carried out by the respective workers.
+progress and status of the work carried out by the respective workers~\cite{hid-sp18-410-spark-architecture}.
 
 YARN consists of two component types
 
@@ -886,13 +889,13 @@ The other option for running spark where people prefer alternative resource
 managers, Spark could be run on other clusters controlled by Apache Mesos.
 Spark also provides series of scripts bundled with current releases of spark 
 simplifies the process of launching spark on Amazon web services Elastic 
-compute cloud EC2.
+compute cloud EC2~\cite{hid-sp18-410-spark-architecture}.
 
 \subsection{Storage options for spark}
 
 Spark can also easily integrate with myriad of commercial and open source 3rd 
 party data storage systems such as MapR, Google Cloud, Amazon S3, Apache 
-Cassandra, Apache Hadoop, Apache Hbase and Apache Hive.
+Cassandra, Apache Hadoop, Apache Hbase and Apache Hive~\cite{hid-sp18-410-spark-architecture}.
 
 
 \subsection{Spark stack}
@@ -905,18 +908,26 @@ of several different use cases.
 Any application would technically require Spark Core and at least one of these 
 four libraries.The flexibility and main benefit of spark would become evident 
 when applications that require combination of two or more libraries run 
-efficiently on top of Spark core.
+efficiently on top of Spark core~\cite{hid-sp18-410-spark-architecture}.
 
 
-\begin{center}
+% \begin{center}
 
-% \begin{figure}[htb!]
-        \centering\includegraphics[scale=0.35]
-        {images/spark-stack.png}
-        \label{fig:spark-stack}
-% \end{figure}
+% % \begin{figure}[htb!]
+%         \centering\includegraphics[scale=0.35]
+%         {images/spark-stack.png}
+%         \label{fig:spark-stack}
+% % \end{figure}
 
-\end{center}
+% \end{center}
+
+\begin{figure*}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/spark-stack.png}
+   \caption{Spark Stack 
+   ~\cite{hid-sp18-410-spark-architecture}}\label{fig:spark-stack}
+\end{figure*}
+
+
 
 
 \subsection{Spark Core}
@@ -924,7 +935,7 @@ efficiently on top of Spark core.
 The heart of the spark lies at the Spark Core and is responsible for management 
 functions like task scheduling, monitoring and other watchdog services. 
 Spark implements and is based on a programming abstraction known as 
-RDD (Resilient Distributed Dataset).
+RDD (Resilient Distributed Dataset)~\cite{hid-sp18-410-spark-architecture}.
 
 \subsection{Libraries}
 
@@ -960,9 +971,10 @@ represented as graphs.It also supports a version of graph processing Pregel API.
 
 \item Spark R - this module is added to 1.4.x release of Apache Spark which provides 
 data scientists and statisticians to use their language R in a mechanism that is
- light weight used for calling upon spark’s capability.
+ light weight used for calling upon spark’s capability~\cite{hid-sp18-410-spark-architecture}.
 
 \end{itemize}
+
 
 \subsection{RDD Design flow}
 
@@ -972,7 +984,7 @@ achieved in part by tracking lineage of transformations that were applied to
 coarse grained data sets.Efficiency was achieved through process parallelization
  across multiple nodes in the cluster and minimization of data replication 
  between respective nodes.
-Once we load the data into RDD, two basic types of operations are carried out.
+Once we load the data into RDD, two basic types of operations are carried out~\cite{hid-sp18-410-spark-RDD}.
 
 \begin{itemize}
 
@@ -995,7 +1007,7 @@ also introduce processing bottlenecks that could cause applications to stall
 while waiting for a processing action to conclude.
 
 Spark tries to keep these RDDs in memory that greatly increase the performance 
-of the cluster.
+of the cluster~\cite{hid-sp18-410-spark-RDD}.
 
 \subsection{Reason for slowness in Data sharing on MapReduce}
 
@@ -1008,7 +1020,7 @@ generating large Datasets in parallel with a distributed algorithm on a cluster.
 The fast growing user base needs interactive and interactive application that 
 require data sharing at a faster pace. The sharing of data between jobs is slow 
 in MapReduce due to replication, serialization and disk IO. Most of the hadoop 
-applications tend to spend maximum time in reading and writing tasks in HDFS.
+applications tend to spend maximum time in reading and writing tasks in HDFS~\cite{hid-sp18-410-spark-RDD}.
 
 \subsection{Iterative operations in MapReduce}
 
@@ -1017,17 +1029,29 @@ results across multiple computations in multi storage applications.
 The Figure~\ref{fig:iterative-MapRed} clearly explains the working of the  
 current framework in context of execution of interactive operations on 
 Mapreduce. This clearly incurs substantial overheads due to I/O, replication of 
-data and serialization that in turn degrades the system performance. 
-\begin{center}
+data and serialization that in turn degrades the system performance~\cite{hid-sp18-410-spark-RDD}. 
 
-% \begin{figure}[htb!]
-        \centering\includegraphics[scale=0.35]
-        {images/iterative-MapReduce.png}
-        \label{fig:iterative-MapRed}
-% \end{figure}
+% \begin{center}
 
-\end{center}
-\textbf{Iterative Operations on MapReduce}
+% % \begin{figure}[htb!]
+%         \centering\includegraphics[scale=0.35]
+%         {images/iterative-MapReduce.png}
+%         \label{fig:iterative-MapRed}
+% % \end{figure}
+% \end{center}
+% \textbf{Iterative Operations on MapReduce}
+
+\begin{figure*}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/iterative-MapReduce.png}
+   \caption{Iterative Operations on MapReduce 
+   ~\cite{hid-sp18-410-spark-RDD}}\label{fig:iterative-MapRed}
+\end{figure*}
+
+
+
+
+
+
 
 
 
@@ -1036,19 +1060,28 @@ data and serialization that in turn degrades the system performance.
 General users run ad-hoc queries on the same subset of data where each query 
 would perform disk I/O on the stable storage that use most of the execution time.
 Figure~\ref{fig:interactive-MapRed} explains the current framework on execution 
-of interactive queries on MapReduce.
+of interactive queries on MapReduce~\cite{hid-sp18-410-spark-RDD}.
 
-\begin{center}
+% \begin{center}
 
 
-% \begin{figure}[htb!]
-        \centering\includegraphics[scale=0.35]
-        {images/interactive-MapReduce.png}
-        \label{fig:interactive-MapRed}
-% \end{figure}
+% % \begin{figure}[htb!]
+%         \centering\includegraphics[scale=0.35]
+%         {images/interactive-MapReduce.png}
+%         \label{fig:interactive-MapRed}
+% % \end{figure}
 
-\end{center}
-\textbf{Interactive Operations on MapReduce}
+% \end{center}
+% \textbf{Interactive Operations on MapReduce}
+
+
+\begin{figure*}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/interactive-MapReduce.png}
+   \caption{Interactive Operations on MapReduce
+   ~\cite{hid-sp18-410-spark-RDD}}\label{fig:interactive-MapRed}
+\end{figure*}
+
+
 
 
 \subsection{Data sharing in Spark RDD}
@@ -1064,18 +1097,24 @@ Illustration in the Figure~\ref{fig:iterative-spark} explains the iterative
 operations in spark RDD which stores the intermediate results in a distributed 
 memory rather than stable storage such as HDFS and thus makes the system faster.
 Also if the distributed memory does not suffice to store the intermediate 
-results then Spark stores those results on disk.
+results then Spark stores those results on disk~\cite{hid-sp18-410-spark-RDD}.
 
-\begin{center}
+% \begin{center}
 
-% \begin{figure}[htb!]
-        \centering\includegraphics[scale=0.35]
-        {images/iterativeSpark.png}
-        \label{fig:iterative-spark}
-% \end{figure}
+% % \begin{figure}[htb!]
+%         \centering\includegraphics[scale=0.35]
+%         {images/iterativeSpark.png}
+%         \label{fig:iterative-spark}
+% % \end{figure}
 
-\end{center}
-\textbf{Iterative Operations on Spark RDD}
+% \end{center}
+% \textbf{Iterative Operations on Spark RDD}
+
+\begin{figure*}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/iterativeSpark.png}
+   \caption{Iterative Operations on Spark RDD
+   ~\cite{hid-sp18-410-spark-RDD}}\label{fig:iterative-spark}
+\end{figure*}
 
 
 
@@ -1089,16 +1128,23 @@ interactive operation on Spark RDD where in if different queries are executed on
  elements on the cluster for much faster access and increase the efficiency of 
  whole process~\cite{hid-sp18-410-spark-RDD}.
 
-\begin{center}
+% \begin{center}
 
-% \begin{figure}[htb!]
-        \centering\includegraphics[scale=0.35]
-        {images/interactiveSpark.png}
-        \label{fig:interactive-spark}
-% \end{figure}
+% % \begin{figure}[htb!]
+%         \centering\includegraphics[scale=0.35]
+%         {images/interactiveSpark.png}
+%         \label{fig:interactive-spark}
+% % \end{figure}
 
-\end{center}
-\textbf{Interactive Operations on Spark RDD}
+% \end{center}
+% \textbf{Interactive Operations on Spark RDD}
+
+
+\begin{figure*}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/interactiveSpark.png}
+   \caption{Interactive Operations on Spark RDD
+   ~\cite{hid-sp18-410-spark-RDD}}\label{fig:interactive-spark}
+\end{figure*}
 
 
 
