@@ -528,13 +528,16 @@ specifically composed of a single Namenode,
 an optional secondary node and the 
 random number of the data nodes~\cite{hid-sp18-412-HDFS-Architecture}.
 
-The following Figure 1 displays the vanilla hadoop deployment.
+The structuring of Vanilla Hadoop Deployment is 
+shown in Figure~\ref{s:vaniarchi}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/vanilla.png}\label{s:vani_archi}
-\end{center}
-\textbf{Figure 1: Vanilla Hadoop Architecture
-~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/vanilla.png}
+\caption{Vanilla 
+Hadoop 
+Architecture
+~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:vaniarchi}
+\end{figure*}
 
 \subsubsection{Namenode and DataNodes}
 The HDFS cluster composes of a single Namenode, this node acts as 
@@ -557,12 +560,13 @@ The execution of the tasks with
  The read and write requests from the clients of the file system
   are fulfilled by the datanodes~\cite{hid-sp18-412-HDFS-Architecture}.
 
-The following Figure 2 displays the HDFS Architecture.
+The HDFS architecture is shown in Figure~\ref{s:archihdfs}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/HDFSarchi.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 2: HDFS Architecture~\cite{hid-sp18-412-HDFS-Architecture}} 
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/HDFSarchi.png}
+\caption{HDFS 
+Architecture~\cite{hid-sp18-412-HDFS-Architecture}}\label{s:archihdfs}
+\end{figure*}
 
 The general platform that the namenodes and the datanodes run are on 
 the GNU/Linux operating system. The main primary language used to 
@@ -606,16 +610,17 @@ This avoids the redundant creation of the
 new fsimage every time the 
 namespace is modified~\cite{hid-sp18-412-hadoop-architecture-overview}. 
 
-The structuring of the secondary NameNode is shown in the Figure 3.
+The structuring of the secondary NameNode is 
+shown in the Figure~\ref{s:secnode}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/StructureOfSecondaryNode.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 3: Structuring of the Secondary NameNode
-~\cite{hid-sp18-412-hadoop-architecture-overview}}
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{images/StructureOfSecondaryNode.png}
+\caption{Structuring of the Secondary 
+NameNode~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:secnode}
+\end{figure*}
 
-
-The Figure 3 shows the structuring of the secondary NameNode. 
+The Figure~\ref{s:secnode} shows the structuring of the secondary NameNode. 
 The secondary NameNode will be independently validating and 
 updating the replica of the fsimage subsequent to the changes 
 that are made in the edit log. If the active node fails in the 
@@ -648,15 +653,17 @@ The high-level specification or the unit in the
 MapReduce framework is the Job. The each of the 
 job composes of the one or 
 more map or the reduce tasks~\cite{hid-sp18-412-hadoop-architecture-overview}. 
-The following Figure 4 the perfect example of the MapReduce 
-job with respect to the 
-WordCount application~\cite{hid-sp18-412-hadoop-architecture-overview}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/WordCountMapReduce.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 4: Word Count MapReduce 
-Job~\cite{hid-sp18-412-hadoop-architecture-overview}} 
+The following Figure~\ref{s:mapreduce} 
+shows the perfect example of the 
+MapReduce job with respect to the WordCount application.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/WordCountMapReduce.png}
+\caption{Word Count 
+MapReduce 
+Job~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:mapreduce}
+\end{figure*}
 
 \subsubsection{Related Frameworks}
 There are other frameworks that perform and accomplish the 
@@ -676,6 +683,15 @@ The application would be treated as the single job
 or the Directed Acyclic 
 graph of the Jobs~\cite{hid-sp18-412-YARN_Architecture}.
 
+The following figure describes the architecture 
+of the YARN~\ref{s:archiyarn}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/YARNArchitecture.png}
+\caption{YARN 
+Architecture~\cite{hid-sp18-412-YARN_Architecture}}\label{s:archiyarn}
+\end{figure*}
+
 \subsubsection{Data Computation Framework}
 The data computation framework is formed by the Resource Manager 
 and the NodeManager. The major authority is possessed  
@@ -689,12 +705,6 @@ respect to the cpu, memory, disk and the network,
 which would report the 
 same to the Resource Manager /Scheduler~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure 5 describes the architecture of the YARN.
-
-\begin{center}
-\includegraphics[scale=0.35]{images/YARNArchitecture.png}\label{s:hdfs}
-\end{center}
-\textbf{Figure 5: Architecture of YARN~\cite{hid-sp18-412-YARN_Architecture}} 
 
 \subsubsection{Resource Manager}
 The following figure 6 describes the architecture of the 
@@ -707,13 +717,15 @@ The standby resource manager will be waiting to take
 over in case of any of the disaster with 
 respect to the active resource manager~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure 6 describes the architecture of the Resource Manager.
+The following figure describes the architecture 
+of the Resource Manager~\ref{s:archires}.
 
-\begin{center}
-\includegraphics[scale=0.35]{images/YARNResourceManager.png}\label{s:res}
-\end{center}
-\textbf{Figure 6: Architecture of 
-Resource Manager~\cite{hid-sp18-412-ResourceManager_Architecture}}
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/YARNResourceManager.png}
+\caption{Resource 
+Manager 
+Architecture~\cite{hid-sp18-412-ResourceManager_Architecture}}\label{s:archires}
+\end{figure*}
 
 \subsubsection{Node Manager}
 This node manager is the slave in the system infrastructure. 
@@ -724,12 +736,14 @@ At the next depth, the container is the fraction of the Node Manager
 and it is in turn used by the 
 client to run the application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
 
-The following figure 7 displays the division of 
-the Node Manager into containers.
-\begin{center}
-\includegraphics[scale=0.35]{images/nodemanager.png}\label{s:res}
-\end{center}
-\textbf{Figure 7: Node Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}
+The following figure displays the division of the Node Manager into 
+containers~\ref{s:archinode}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/nodemanager.png}
+\caption{Node 
+Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
+\end{figure*}
 
 \section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
 The figure indicates the architecture of the Apache Hadoop on the 
@@ -742,12 +756,15 @@ master. Further, Java and Python WordCount application is run
 in order to benchmark, evaluate and compare the performance
  of the Hadoop and spark applications.
 
-The following figure 8 displays the division 
-of the Node Manager into containers.
-\begin{center}
-\includegraphics[scale=0.35]{images/RaspberryPiSpark.png}\label{s:rasp}
-\end{center}
-\textbf{Figure 8: Hadoop Architecture deployed on Rasberry Pi 3}
+The following figure describes the architecture of the Apache 
+Hadoop Architecture 
+Deployed on the Raspberry Pi 3~\ref{s:archihadoop}.
+
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/RaspberryPiSpark.png}
+\caption{Apache Hadoop Deployment Architecture on 
+RaspberryPi 3}\label{s:archihadoop}
+\end{figure*}
 
 \section{Docker}
 The docker provides the containerization at the operating systems level. 
@@ -790,26 +807,16 @@ the performance of the Apache Hadoop and the standalone
 spark on the different platforms. Docker was one of the 
 platform that was selected in this project to 
 evaluate the performance of the application with these frameworks.
+The dockerized WordCount program is run on the Ununtu 17.10 platform. 
 
 \subsection{Docker-Spark Architecture} 
-The following figure 9 describes the implementation of the 
-docker-spark architecture that is deployed on the Ubuntu 17.10.
-\begin{center}
-\includegraphics[scale=0.35]{images/dockerspark.png}\label{s:dockerspark}
-\end{center}
-\textbf{Figure 9: Architecture of Docker-Spark Deployment}
+The following figure~\ref{s:archidocker} describes the implementation of 
+the Docker-Spark architecture that is deployed on the Ubuntu 17.10.
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{figure*}[!ht]
+\centering\includegraphics[width=\textwidth]{images/dockerspark.png}
+\caption{Docker Spark}\label{sa:archidocker}\label{s:archidocker}
+\end{figure*}
 
 
 \section{Spark Architecture}
