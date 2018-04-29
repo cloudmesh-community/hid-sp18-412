@@ -17,7 +17,7 @@ Architecture~\cite{hid-sp18-412-HDFS-Architecture}}\label{s:archihdfs}
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{images/StructureOfSecondaryNode.png}
-\caption{Structuring of the Secondary
+\caption{Structuring of Secondary
 NameNode~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:secnode}
 \end{figure*}
 \efloatseparator
@@ -48,7 +48,8 @@ Architecture~\cite{hid-sp18-412-ResourceManager_Architecture}}\label{s:archires}
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/nodemanager.png}
 \caption{Node
-Manager~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
+Manager
+Division~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
 \end{figure*}
 \efloatseparator
  

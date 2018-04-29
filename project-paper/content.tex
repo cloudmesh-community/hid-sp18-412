@@ -309,11 +309,11 @@ reliability in a variety of production applications at full scale.
 \item Comprehensive Authentication and Security: 
 All businesses are looking for software that makes their work safe, secure and 
 authenticated. When it comes to authentication and security, Hadoop provides an 
-advantage over other software. Its HBase security, along with HDFS and 
-MapReduce, allows only approved users to operate on secured data, thereby 
-securing an entire system from unwanted or illegal access. Security is the top 
-priority of every organization. Any unlawful access to data is sure to harm 
-business dealings and operations~\cite{hid-sp18-406-hadoop-intro11}.
+advantage over other software. Its HBase~\cite{hid-sp18-406-hbase} security, 
+along with HDFS and MapReduce, allows only approved users to operate on secured 
+data, thereby securing an entire system from unwanted or illegal access. 
+Security is the top priority of every organization. Any unlawful access to data 
+is sure to harm business dealings and operations~\cite{hid-sp18-406-hadoop-intro11}.
 
 \item Flexible with Range of data sources: 
 Hadoop enables businesses to easily access new data sources and tap into 
@@ -374,7 +374,8 @@ Apache Spark requires  a manger to handle the cluster load and also needs a
 distributed storage system. For cluster management, Spark supports standalone 
 cluster, Hadoop Yarn and Apache Mesos. To provide distributed storage, Spark 
 can be integrated with a variety of frameworks like Hadoop Distributed File 
-System (HDFS), MapR File System (MapR-FS), Cassandra, Kudu. Also, a custom 
+System (HDFS), MapR File System (MapR-FS)~\cite{hid-sp18-408-maprfs}, Cassandra
+~\cite{hid-sp18-408-cassandra}, Kudu~\cite{hid-sp18-408-kudu}. Also, a custom 
 solution can be implemented and integrated into Spark~\cite{hid-sp18-408-Spark}. 
 
 \subsection{Spark Core}
@@ -401,7 +402,9 @@ in data in mini-batches and performs RDD transformations on those mini-batches
 of data. This enables the same set of application code written for batch 
 analytics to be used for streaming analytics as well enabling easy 
 implementation of lambda architecture. Spark Streaming has support to consume 
-from Kafka, Twitter, Flume, Kinesis and TCP/IP sockets~\cite{hid-sp18-408-Spark}.
+from Kafka~\cite{hid-sp18-408-Kafka}, Twitter~\cite{hid-sp18-408-twitter}, Flume
+~\cite{hid-sp18-408-flume}, Kinesis~\cite{hid-sp18-408-kinesis} and TCP/IP 
+sockets~\cite{hid-sp18-408-Spark}.
 
 \subsection{Spark MLlib}
 Spark MLlib (Machine Learning Library) is a distributed machine learning 
@@ -424,7 +427,7 @@ Pregel abstraction and a MapReduce style API~\cite{hid-sp18-408-Spark}.
 \section{Applications of Spark}
 
 The applications of Apache Spark range from Streaming Data, Machine Learning, 
-Interactive Analysis and Fog Computing.
+Interactive Analysis and Fog Computing~\cite{hid-sp18-408-fog}.
 
 \subsection{Spark Streaming Data}
 Spark's key use case is its ability to process continuously 
@@ -679,7 +682,7 @@ Job~\cite{hid-sp18-412-hadoop-architecture-overview}}\label{s:mapreduce}
 There are other frameworks that perform and accomplish the 
 MapReduce jobs in a similar way as hadoop. 
 The most used frameworks 
-other than the Hadoop are Apache Spark and Apache Tez. 
+other than the Hadoop are Apache Spark and Apache Tez~\cite{hid-sp18-412-tez}. 
 This paper also describes Apache spark and other relevant 
 analysis that is performed with respect to Apache Spark 
 with different computing platforms and
@@ -821,7 +824,7 @@ the performance of Apache Hadoop and standalone
 spark on different platforms. Docker was one
 platform that was selected in this project to 
 evaluate the performance of an application with these frameworks.
-The dockerized WordCount program is run on the Ununtu 17.10 platform. 
+The dockerized WordCount program is run on the Ubuntu 17.10 platform. 
 
 \subsection{Docker-Spark Architecture} 
 The following figure~\ref{s:archidocker} describes the implementation of 
@@ -906,16 +909,17 @@ usage of its resources such as CPU and memory consumption.
 \end{itemize}
 
 The other option for running spark where people prefer alternative resource 
-managers, Spark could be run on other clusters controlled by Apache Mesos.
-Spark also provides series of scripts bundled with current releases of spark 
+managers, Spark could be run on other clusters controlled by Apache Mesos~\cite{hid-sp18-410-mesos}.
+Spark also provides series of scripts bundled with current releases of Spark 
 simplifies the process of launching spark on Amazon web services Elastic 
 compute cloud EC2~\cite{hid-sp18-410-spark-architecture}.
 
-\subsection{Storage options for spark}
+\subsection{Storage options for Spark}
 
 Spark can also easily integrate with myriad of commercial and open source 3rd 
-party data storage systems such as MapR, Google Cloud, Amazon S3, Apache 
-Cassandra, Apache Hadoop, Apache Hbase and Apache Hive~\cite{hid-sp18-410-spark-architecture}.
+party data storage systems such as MapR, Google Cloud, Amazon S3~\cite{hid-sp18-410-s3}
+,Apache Cassandra, Apache Hadoop, Apache Hbase and Apache Hive~\cite{hid-sp18-410-hive}
+~\cite{hid-sp18-410-spark-architecture}.
 
 
 \subsection{Spark stack}
@@ -957,43 +961,6 @@ functions like task scheduling, monitoring and other watchdog services.
 Spark implements and is based on a programming abstraction known as 
 RDD (Resilient Distributed Dataset)~\cite{hid-sp18-410-spark-architecture}.
 
-\subsection{Libraries}
-
-\begin{itemize}
-
-\item Spark SQL - The module for working with structured data within the relational 
-databases.This is designed to support workloads that make familiar and complex 
-SQL queries that helps in algorithm based analytics. This also supports the open
- source projects such as Hive and HiveQL query syntax. This also supports JDBC 
- and ODBC connections that enables high level degree of integration with current
-  database systems, data warehouse and business intelligence tools. Most of the 
-  JDBC connectors could be used to integrate with Apache Drill and also connects
-   other broad range of data sources.
-
-\item Spark streaming - This module majorly supports scalable and fault tolerant 
-processing of streaming data which is very much required for a processing of 
-input and output for any cluster based application. This module could also be 
-used for integrating with established sources of data streams such as Flume 
-(Optimizations for the data logs) and Kafka (optimizations for distributed 
-messaging). The design of Spark streaming library and the use of Spark’s RDD 
-abstraction ensures that the applications that are written for streaming data 
-so that it could be modified and used accordingly to analyze the batches of 
-historical data.
-
-\item MLlib - This module includes spark’s scalable machine learning library which 
-technically implements a commonly used set of machine learning and statistical 
-algorithms which include hypothesis testing, classification, regression, 
-clustering and principal component analysis.
-
-\item GraphX- This module was developed at UC Berkeley which was donated to Apache 
-Spark project. This supports analysis and computation over data that is 
-represented as graphs.It also supports a version of graph processing Pregel API.
-
-\item Spark R - this module is added to 1.4.x release of Apache Spark which provides 
-data scientists and statisticians to use their language R in a mechanism that is
- light weight used for calling upon spark’s capability~\cite{hid-sp18-410-spark-architecture}.
-
-\end{itemize}
 
 
 \subsection{RDD Design flow}
