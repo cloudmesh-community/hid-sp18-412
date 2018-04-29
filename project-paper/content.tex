@@ -73,8 +73,8 @@ a task is processed over two or more computers in the network within distributed
 
 \end{abstract}
 
-\keywords{hid-sp18-406,hid-sp18-408,hid-sp18-410,hid-sp18-412,
-Spark,Raspberry Pi,Hadoop,Spark Cluster}
+\keywords{hid-sp18-406, hid-sp18-408, hid-sp18-410, hid-sp18-412, 
+Raspberry Pi, Hadoop, Spark Cluster}
 
 
 \maketitle
@@ -336,7 +336,7 @@ use~\cite{hid-sp18-406-hadoop-intro13}.
 
 \section{Introduction to Apache Spark}
 
-Apache Spark is a cluster computing framework developed 
+Apache Spark~\cite{hid-sp18-408-ApacheSpark} is a cluster computing framework developed 
 at the University of California, Berkeley. It is maintained as an open software 
 by the Apache Software Foundation. It provides an interface for programming with 
 data parallelization and also fault tolerance. Spark's architecture is based on 
@@ -390,7 +390,8 @@ data loss, it can be reconstructed. RDD's support any type of Python, Scala or
 Java objects. Along with the RDD style of programming, Spark provides two 
 restricted forms of shared variables - broadcast variables and accumulators. 
 Broadcast variables reference read-only data and makes it available on all 
-nodes. Accumulators can be used to program reduce part in an imperative style~\cite{hid-sp18-408-Spark}. 
+nodes. Accumulators can be used to program reduce part 
+in an imperative style~\cite{hid-sp18-408-Spark}. 
 
 \subsection{Spark SQL}
 Spark SQL is a component that is built on top of Spark Core that provides a data 
@@ -407,7 +408,8 @@ from Kafka~\cite{hid-sp18-408-Kafka}, Twitter~\cite{hid-sp18-408-twitter}, Flume
 sockets~\cite{hid-sp18-408-Spark}.
 
 \subsection{Spark MLlib}
-Spark MLlib (Machine Learning Library) is a distributed machine learning 
+Spark MLlib~\cite{hid-sp18-408-Mllib} (Machine Learning Library) 
+is a distributed machine learning 
 framework that is built on top of Spark Core. Many common machine learning and 
 statistical algorithms have been implemented in MLlib which facilitates large 
 scale machine learning pipelines. Some of the supervised and unsupervised 
@@ -493,16 +495,16 @@ has richer features such as Filter, Join and Group-by. Hence development in
 Spark is easier and is flexible. Spark provides a lot of instructions at a 
 higher level of abstraction than what MapReduce provides~\cite{hid-sp18-408-Difference}.
 
-\section{Hadoop Architecture}
+\section{Apache Hadoop Architecture}
 
-\subsection{General Introduction about the Hadoop Architecture}
-Apache Hadoop is distributed computation framework that that provides 
+\subsection{General Introduction about the Apache Hadoop's Architecture}
+Apache Hadoop~\cite{hid-sp18-412-ApacheHadoop} is distributed computation framework that that provides 
 the storage and capability of running the programs on multiple 
 master slave architecture in order to enable the distributed processing. 
 The very basic implementation of the Apache Hadoop started with the 
 Google’s MapReduce programming model, which now has grown to an 
-enormous ecosystem with related technologies such as Apache Hive, 
-Apache Spark and Apache HBase. The architectural pattern of the Hadoop 
+enormous ecosystem with related technologies such as Apache Hive~\cite{hid-sp18-410-hive}, 
+Apache Spark and Apache HBase~\cite{hid-sp18-406-hbase}. The architectural pattern of the Hadoop 
 has made it so famous that it has been adopted by many of the companies 
 such as Facebook, Yahoo, Adobe, 
 Cisco, ebay etc~\cite{hid-sp18-412-hadoop-architecture-overview}.
@@ -847,7 +849,8 @@ Spark offers great features in terms of speed, simplicity and high level support
  for development of current environments and storage systems. They have wide 
  range of developers that embrace the ongoing development for one of the 
  Apache's largest and most active platform with around 500 contributors who are 
- responsible for their code in the software code release~\cite{hid-sp18-410-spark-architecture}.
+ responsible for their code in the 
+ software code release~\cite{hid-sp18-410-spark-architecture}.
 
 \subsection{Support for programming languages}
 Spark provides very easy interface and comprehensive support for the enhancement
@@ -909,7 +912,8 @@ usage of its resources such as CPU and memory consumption.
 \end{itemize}
 
 The other option for running spark where people prefer alternative resource 
-managers, Spark could be run on other clusters controlled by Apache Mesos~\cite{hid-sp18-410-mesos}.
+managers, Spark could be run on other clusters 
+controlled by Apache Mesos~\cite{hid-sp18-410-mesos}.
 Spark also provides series of scripts bundled with current releases of Spark 
 simplifies the process of launching spark on Amazon web services Elastic 
 compute cloud EC2~\cite{hid-sp18-410-spark-architecture}.
@@ -917,8 +921,11 @@ compute cloud EC2~\cite{hid-sp18-410-spark-architecture}.
 \subsection{Storage options for Spark}
 
 Spark can also easily integrate with myriad of commercial and open source 3rd 
-party data storage systems such as MapR, Google Cloud, Amazon S3~\cite{hid-sp18-410-s3}
-,Apache Cassandra, Apache Hadoop, Apache Hbase and Apache Hive~\cite{hid-sp18-410-hive}
+party data storage systems such as MapR, 
+Google Cloud, Amazon S3~\cite{hid-sp18-410-s3}
+,Apache Cassandra~\cite{hid-sp18-408-cassandra}, Apache Hadoop, 
+Apache Hbase~\cite{hid-sp18-406-hbase} and 
+Apache Hive~\cite{hid-sp18-410-hive}
 ~\cite{hid-sp18-410-spark-architecture}.
 
 
@@ -971,7 +978,8 @@ achieved in part by tracking lineage of transformations that were applied to
 coarse grained data sets.Efficiency was achieved through process parallelization
  across multiple nodes in the cluster and minimization of data replication 
  between respective nodes.
-Once we load the data into RDD, two basic types of operations are carried out~\cite{hid-sp18-410-spark-RDD}.
+Once we load the data into RDD, two basic types of operations 
+are carried out~\cite{hid-sp18-410-spark-RDD}.
 
 \begin{itemize}
 
@@ -1007,7 +1015,8 @@ generating large Datasets in parallel with a distributed algorithm on a cluster.
 The fast growing user base needs interactive and interactive application that 
 require data sharing at a faster pace. The sharing of data between jobs is slow 
 in MapReduce due to replication, serialization and disk IO. Most of the hadoop 
-applications tend to spend maximum time in reading and writing tasks in HDFS~\cite{hid-sp18-410-spark-RDD}.
+applications tend to spend maximum time in reading and 
+writing tasks in HDFS~\cite{hid-sp18-410-spark-RDD}.
 
 \subsection{Iterative operations in MapReduce}
 
@@ -1016,7 +1025,8 @@ results across multiple computations in multi storage applications.
 The Figure~\ref{fig:iterative-MapRed} clearly explains the working of the  
 current framework in context of execution of interactive operations on 
 Mapreduce. This clearly incurs substantial overheads due to I/O, replication of 
-data and serialization that in turn degrades the system performance~\cite{hid-sp18-410-spark-RDD}. 
+data and serialization that in turn degrades the system 
+performance~\cite{hid-sp18-410-spark-RDD}. 
 
 % \begin{center}
 
