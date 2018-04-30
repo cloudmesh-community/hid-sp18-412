@@ -669,7 +669,7 @@ MapReduce framework is Job. The each of
 job composes of one or 
 more map or the reduce tasks~\cite{hid-sp18-412-hadoop-architecture-overview}. 
 
-The following Figure~\ref{s:mapreduce} 
+The Figure~\ref{s:mapreduce} 
 shows the perfect example of the 
 MapReduce job with respect to WordCount application.
 
@@ -699,8 +699,8 @@ The application would be treated as a single job
 or Directed Acyclic 
 graph of Jobs~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure describes the architecture 
-of the YARN~\ref{s:archiyarn}.
+The figure~\ref{s:archiyarn} describes the architecture 
+of the YARN.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/YARNArchitecture.png}
@@ -721,7 +721,7 @@ and network~\cite{hid-sp18-412-YARN_Architecture}.
 
 
 \subsubsection{Resource Manager}
-The following figure~\ref{s:archires} describes 
+The figure~\ref{s:archires} describes 
 architecture of the 
 resource manager and displays high-level view of 
 resource manager. The resource manager (RM) is assigned
@@ -732,8 +732,8 @@ The standby resource manager will be waiting to take
 over in case of any of disaster with 
 respect to the active resource manager~\cite{hid-sp18-412-YARN_Architecture}.
 
-The following figure describes architecture 
-of resource manager~\ref{s:archires}.
+Figure~\ref{s:archires} describes architecture 
+of resource manager.
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/YARNResourceManager.png}
@@ -752,8 +752,8 @@ At next level of depth, container is fraction of node manager
 and it is in turn used by 
 client to run an application~\cite{hid-sp18-412-YARN_Hadoop_Internal}.
 
-The following figure displays the division of the Node Manager into 
-containers~\ref{s:archinode}.
+Figure~\ref{s:archinode} displays the division of the Node Manager into 
+containers
 
 \begin{figure*}[!ht]
 \centering\includegraphics[width=\textwidth]{images/nodemanager.png}
@@ -764,7 +764,7 @@ Division~\cite{hid-sp18-412-YARN_Hadoop_Internal}}\label{s:archinode}
 
 \section{Apache Hadoop Architecture Deployed on the Raspberry Pi 3}
 
-The figure ~\ref{s:archihadoop} depicts 
+The figure~\ref{s:archihadoop} depicts 
 architecture of Apache Hadoop on 
 Raspberry Pi nodes. There are basically 5 nodes which have been 
 divided into the master and workers. 
@@ -775,7 +775,7 @@ master. Further, Java and Python WordCount applications are run
 in order to benchmark, evaluate and compare the performance
  of Hadoop and spark applications.
 
-Following figure~\ref{s:archihadoop} describes architecture of Apache 
+The figure~\ref{s:archihadoop} describes architecture of Apache 
 Hadoop Deployed on Raspberry Pi 3.
 
 \begin{figure*}[!ht]
@@ -829,7 +829,7 @@ evaluate the performance of an application with these frameworks.
 The dockerized WordCount program is run on the Ubuntu 17.10 platform. 
 
 \subsection{Docker-Spark Architecture} 
-The following figure~\ref{s:archidocker} describes the implementation of 
+The figure~\ref{s:archidocker} describes the implementation of 
 the docker spark architecture that is deployed on Ubuntu 17.10.
 
 \begin{figure*}[!ht]
@@ -942,23 +942,11 @@ when applications that require combination of two or more libraries run
 efficiently on top of Spark core~\cite{hid-sp18-410-spark-architecture}.
 
 
-% \begin{center}
-
-% % \begin{figure}[htb!]
-%         \centering\includegraphics[scale=0.35]
-%         {images/spark-stack.png}
-%         \label{fig:spark-stack}
-% % \end{figure}
-
-% \end{center}
-
 \begin{figure*}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/spark-stack.png}
    \caption{Spark Stack 
    ~\cite{hid-sp18-410-spark-architecture}}\label{fig:spark-stack}
 \end{figure*}
-
-
 
 
 \subsection{Spark Core}
@@ -1028,28 +1016,11 @@ Mapreduce. This clearly incurs substantial overheads due to I/O, replication of
 data and serialization that in turn degrades the system 
 performance~\cite{hid-sp18-410-spark-RDD}. 
 
-% \begin{center}
-
-% % \begin{figure}[htb!]
-%         \centering\includegraphics[scale=0.35]
-%         {images/iterative-MapReduce.png}
-%         \label{fig:iterative-MapRed}
-% % \end{figure}
-% \end{center}
-% \textbf{Iterative Operations on MapReduce}
-
 \begin{figure*}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/iterative-MapReduce.png}
    \caption{Iterative Operations on MapReduce 
    ~\cite{hid-sp18-410-spark-RDD}}\label{fig:iterative-MapRed}
 \end{figure*}
-
-
-
-
-
-
-
 
 
 \subsection{Interactive tasks in MapReduce}
@@ -1058,18 +1029,6 @@ General users run ad-hoc queries on the same subset of data where each query
 would perform disk I/O on the stable storage that use most of the execution time.
 Figure~\ref{fig:interactive-MapRed} explains the current framework on execution 
 of interactive queries on MapReduce~\cite{hid-sp18-410-spark-RDD}.
-
-% \begin{center}
-
-
-% % \begin{figure}[htb!]
-%         \centering\includegraphics[scale=0.35]
-%         {images/interactive-MapReduce.png}
-%         \label{fig:interactive-MapRed}
-% % \end{figure}
-
-% \end{center}
-% \textbf{Interactive Operations on MapReduce}
 
 
 \begin{figure*}[!ht]
@@ -1096,16 +1055,6 @@ memory rather than stable storage such as HDFS and thus makes the system faster.
 Also if the distributed memory does not suffice to store the intermediate 
 results then Spark stores those results on disk~\cite{hid-sp18-410-spark-RDD}.
 
-% \begin{center}
-
-% % \begin{figure}[htb!]
-%         \centering\includegraphics[scale=0.35]
-%         {images/iterativeSpark.png}
-%         \label{fig:iterative-spark}
-% % \end{figure}
-
-% \end{center}
-% \textbf{Iterative Operations on Spark RDD}
 
 \begin{figure*}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/iterativeSpark.png}
@@ -1124,17 +1073,6 @@ interactive operation on Spark RDD where in if different queries are executed on
  action against it.We could also persist an RDD in memory and spark would keep 
  elements on the cluster for much faster access and increase the efficiency of 
  whole process~\cite{hid-sp18-410-spark-RDD}.
-
-% \begin{center}
-
-% % \begin{figure}[htb!]
-%         \centering\includegraphics[scale=0.35]
-%         {images/interactiveSpark.png}
-%         \label{fig:interactive-spark}
-% % \end{figure}
-
-% \end{center}
-% \textbf{Interactive Operations on Spark RDD}
 
 
 \begin{figure*}[!ht]
@@ -1156,8 +1094,8 @@ We have implemented spark cluster in two different ways
 
 \end{itemize}
 
-Figure (Master-worker diagram) explains the architectural set up of both 
-mentioned ways of implementing spark cluster.
+Figure~\ref{s:archihadoop} explains the architectural set up of both 
+mentioned methods of implementing spark cluster.
 
 For the first method we did not install Hadoop and so basically does not consist
  of stable storage system (HDFS) . The basic cluster build configuration were 
@@ -1176,10 +1114,6 @@ information required for spark cluster to run successfully.
 
 \section{Results and Conclusion}
 
-% \documentclass{article} 
-% \usepackage[english]{babel}
-
-% \begin{document}
 
 
 \begin{table}[hbt]
@@ -1225,8 +1159,15 @@ information required for spark cluster to run successfully.
 \end{table}
 
 
-The results clearly compare the performance of Hadoop and Spark 
-on different platforms and using different languages such as Java and Python. 
+The results in the table~\ref{t:results-table} compare the performance of
+Standalone Spark on technology like Java and Python. 
+
+The table~\ref{t:results-table2} compares the performance of Hadoop Cluster on
+YARN with Java and Python.
+
+The table~\ref{t:results-table3} makes a comparison of performance of standalone
+Docker running Python code on varies sized data sets.
+
 Clearly, standalone Spark outperforms Hadoop(HDFS) because it persists 
  the data in memory whereas the HDFS based Hadoop performs extra overhead 
  operations such as shuffling of data and hence executes slower. 
@@ -1240,7 +1181,7 @@ Clearly, standalone Spark outperforms Hadoop(HDFS) because it persists
  usage of these framework are greatly application specific. 
 
 
-% \end{document}
+
 
 
 \section{Work Breakdown}
