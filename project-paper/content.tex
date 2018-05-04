@@ -59,19 +59,20 @@
   
 \begin{abstract}
 
-Big data and cloud computing computing embraces the potential benefits such as 
-high volume, high velocity and high variety. Where as in distributed computing, 
-a task is processed over two or more computers in the network within distributed
- system by breaking down the problem into many parallel smaller task. This 
- method allows to combine computional power of many computer to execute a 
- program involving large data or multiple iterations in parallel. Apache Spark 
- and Hadoop are two frameworks which are trending technologies in the field of 
- distributed computing. In this project we are comparing both frameworks by 
- running a task implemented in different technology on a Raspberry pi 
- distributed system setup with a single master and 4 workers. The final results 
- are used to benchmark the performance in terms of efficiency and time elapsed. 
- This analysis would help us realize scenarios and business use cases for each 
- of these frameworks.
+Big data and cloud computing embrace the potential benefits such as 
+high volume, high velocity, and high variety. Whereas in distributed computing, 
+a task is processed over two or more computers in the network within distributed 
+system by breaking down the problem into many parallel smaller task. This 
+method allows combining computational power of many computers to execute a 
+program involving large data or multiple iterations in parallel. Apache Spark 
+and Hadoop are two frameworks which are trending technologies in the field of 
+distributed computing. In this project, we are comparing both frameworks by 
+running a task implemented in different technology on a Raspberry pi 
+distributed system setup with a single master and 4 workers. The final results 
+are used to benchmark the performance in terms of efficiency and time elapsed. 
+This analysis would help us realize scenarios and business use cases for each 
+of these frameworks.
+
 
 \end{abstract}
 
@@ -103,6 +104,7 @@ machine and device performance, improving security and law enforcement,
 financial trading and also in improving science and research. Thus, all these 
 various applications of big data are not possible from the raw form of the 
 data, it is required to process and analyze this data
+
 \cite{hid-sp18-406-hadoop-abstract}.
 
 \section{Introduction to Hadoop}
@@ -112,88 +114,90 @@ almost all the platforms such as social media, mobile platform and many more.
 The solutions to handle this data should be very quick and also should consider
 business cost required for this analysis. The problem with early storage tools 
 such as RDBMS is that it is unable to process the semi-structured and 
-unstructured data such as   text files, videos, audios, clickstream data and
+unstructured data such as text files, videos, audios, clickstream data and
 it is suitable only for structured data such as banking transaction, location 
 and information. These both forms of data are completely different in ways 
 required for processing the data. The main flaw in RDBMS is that it is unable to
-scale vertically with large number of CPU and other storages. It is a main 
-problem if the main server is down, this created the need for distributed system
-which can be robust and handle scalability. Hadoop is trusted for its effective 
-management of largely sized data which is both structred and unstructured in 
-different forms such as XML, JSON, and also text at high fault-error tolerance. 
-It is noticed that with clusters of many servers in the field of horizontal 
-scalability, Hadoop has marked its significance by providing faster result rates
-from Big Data and also the unstructured data as Hadoop's architecture is based 
-on the open source foundation. Other challenges faced with the big data where 
-keeping the huge amount of data secure, analyzing the data without knowing the 
-type of the data, dealing with data which has poor quality and is inconsistent 
-and incomplete. Also, finding powerful algorithms to find patterns and insights
-was not an easy task. On the other hand, the organizations and enterprises 
-realized that the amount of information which is used for analyzing is less and 
-majority of the data is getting wasted. The main reason behind this is that the 
-organizations lacks power and strong tools to analyze such huge amount of data. 
-Due to these limitations of processesing data, huge amount of valuable data was 
-termed as unwanted and discarded. It is useful and important to collect and 
-keep all the data in a safe storage, which the business organizations realized
+scale vertically with a large number of CPU and other storages. It is the main 
+problem if the main server is down, this created the need for a distributed 
+system which can be robust and handle scalability. Hadoop is trusted for its 
+effective management of large sized data which is both structured and 
+unstructured in different forms such as XML, JSON, and also text at high 
+fault-error tolerance. It is noticed that with clusters of many servers in the 
+field of horizontal scalability, Hadoop has marked its significance by providing
+faster result rates from Big Data and also the unstructured data as Hadoop's 
+architecture is based on the open source foundation. Other challenges faced with
+the big data where keeping the huge amount of data secure, analyzing the data 
+without knowing the type of the data, dealing with data which has poor quality 
+and is inconsistent and incomplete. Also, finding powerful algorithms to find 
+patterns and insights was not an easy task. On the other hand, the organizations
+and enterprises realized that the amount of information which is used for 
+analyzing is less and majority of the data is getting wasted. The main reason 
+behind this is that the organizations lack power and strong tools to analyze 
+such huge amount of data. Due to these limitations of processing data, a huge 
+amount of valuable data was termed as unwanted and discarded. It is useful and 
+important to collect and keep all the data in a safe storage, which the business
+organizations realized
+
 ~\cite{hid-sp18-406-hadoop-intro1}.
 
-Hadoop emerged as a strongest  tool to deal with the above challenges of the big
+Hadoop emerged as the strongest tool to deal with the above challenges of the big
 data. Now, almost all organizations use big data analysis to improve the 
 functionalities in each and every business unit. The various kinds of business 
-units include research, design, development, marketing, advertising, sales  and 
+units include research, design, development, marketing, advertising, sales and
 customer handling. Sharing such huge amount of data across different platforms  
-is also challenging,  in such scenarios hadoop is used to create a pond. Hadoop 
-in this way represents repository of various sources of data which may be from 
+is also challenging,  in such scenarios Hadoop is used to create a pond. Hadoop 
+in this way represents a repository of various sources of data which may be from 
 intrinsic or extrinsic sources. Hadoop is a set of open source programs and 
 procedures which can be used for big data operations. It is an open source 
-framework from Apache which is comprised of Java based programming framework 
+framework from Apache which is comprised of Java-based programming framework 
 that can be used for data storage and processing of the data-sets clusters on 
-commodity hardware. The basic idea behind hadoop is that to make the computation
+commodity hardware. The basic idea behind Hadoop is that to make the computation
 of the data faster. Hadoop MapReduce is composed of shared and integrated 
 foundation where developers can include additional tools and enhance the 
-framework. Additionally, scalability is the core of the hadoop system. The novel
-approach which emerged hadoop is that by storing the all types of data 
+framework. Additionally, scalability is the core of the Hadoop system. The novel
+approach which emerged Hadoop is that by storing the all types of data 
 available, focus on organizing and analyzing the data in new interesting ways
 ~\cite{hid-sp18-406-hadoop-intro2}.
 
 The growth of Hadoop has marked its significance in changing the perception of 
 handling Big Data, specifically for the unstructured data. Using Hadoop we can 
 enable excess data streamlining for any distributed processing system across 
-clusters. Hadoop system helps scaling up from single server to a large number 
+clusters. Hadoop system helps to scale up from single server to a large number 
 of servers, and also assuring local computation and storage space on every 
 distributed server. Hadoop does not depend on hardware to provide 
-high-availability; instead it makes its software efficient by building robust 
+high-availability; instead, it makes its software efficient by building robust 
 libraries. These libraries will handle the breakdown at the application layer 
-and thus helping the service to be efficient along with the cluster of computers
+and thus help the service to be efficient along with the cluster of computers
 ~\cite{hid-sp18-406-hadoop-intro3}.
 
-Hadoop as framework has established credibility for various factors. It allows 
+Hadoop as a framework has established credibility for various factors. It allows 
 the users to easily frame test cases on distributed systems. These test cases 
 are efficiently deployed across various machines in turn and it also utilizes 
-the parallelism of the CPU cores. Another interesting feature of hadoop is that 
-it does not rely on hardware to take care of the fault tolerance, instead hadoop
-is designed to detect the failures and handle them at the application layer 
-itself. Additionally, servers configuration, addition and removal is independent
-of the hadoop operation and these servers can be added and detached to the 
-clusters dynamically during the operations. One of the major advantage and main 
-reason for hadoop to be successful is that being an open source framework it is 
-suitable for all the frameworks as it is Java based
+the parallelism of the CPU cores. Another interesting feature of Hadoop is that 
+it does not rely on hardware to take care of the fault tolerance, instead, 
+Hadoop is designed to detect the failures and handle them at the application 
+layer itself. Additionally, servers configuration, addition, and removal are 
+independent of the Hadoop operation and these servers can be added and detached 
+to the clusters dynamically during the operations. One of the major advantage 
+and main reason for Hadoop to be successful is that being an open source 
+framework it is suitable for all the frameworks as it is Java based
 ~\cite{hid-sp18-406-hadoop-intro4}.
 
-In simple words to state, hadoop provides efficient ways of storing enormous 
+In simple words to state, Hadoop provides efficient ways of storing enormous 
 data sets by distributing it to various clusters and then execute distributed 
 analysis application in each cluster. The other main important feature about 
 hadoop is that, it is a framework which is modular and is compatible to 
 integrate with any of the required modules. Thus, it allows swapping of the 
-components according the need of software tool which results in flexible 
-architecture, which makes hadoop robust and efficient. To the business 
-organizations, the flexibility feature of hadoop is most advantageous, as it 
+components according to the need of software tool which results in flexible 
+architecture, which makes Hadoop robust and efficient. To the business 
+organizations, the flexibility feature of Hadoop is most advantageous, as it 
 allows the business users to add or modify their data storage and analysis  
 according to the business needs and suitable software.
 
 
 \subsection{Overview of Hadoop Modules}
-Apache's hadoop framework in composed of the four main modules:
+Apache's Hadoop framework composed of the four main modules:
 
 \begin{itemize}
 \item Hadoop Common: This holds the libraries and utilities required by the 
@@ -203,24 +207,25 @@ machines, which is helpful in providing efficient bandwidth across the cluster.
 \item Hadoop Yarn: this is basically a resource management platform which will 
 be responsible managing compute resources in clusters and using them for 
 scheduling of user's applications.
-\item Hadoop MapReduce: This is the programming module required for large scale 
+\item Hadoop MapReduce: This is the programming module required for large-scale 
 data processing.
-The main principle behind the above mentioned modules of Hadoop is that the 
-common scenarios of  hardware failures is handled by software in the framework
+The main principle behind the above-mentioned modules of Hadoop is that the 
+common scenarios of  hardware failures are handled by software in the framework
 ~\cite{hid-sp18-406-hadoop-intro5}.
 \end{itemize}
 
+
 \subsection{Importance of Yarn}
 Yet Another Resource Negotiator (YARN) is one of the most important components 
-of Apache hadoop as it takes care of managing resources and scheduling tasks and
+of Apache Hadoop as it takes care of managing resources and scheduling tasks and
 thus forming the clustering platform. YARN is responsible for setting up the 
-global and application specific components which are required for resource 
+global and application-specific components which are required for resource 
 management. For any particular application, the required and suitable resources 
 are allocated by the YARN. Initially, the application submission client will 
 submit an application to the resource manager of YARN. Further, YARN takes the 
 responsibility of scheduling application so that tasks are prioritized and big 
-data analytics of the system can be managed. This results as the greater step 
-of system architecture for collecting the data and sorting them and further 
+data analytics of the system can be managed. This results in the greater step 
+of the system architecture for collecting the data and sorting them and further 
 conducting requirement specific queries such as data retrieval. Such type of 
 information retrieval has found very great business values because the 
 organizations can use data analyzing platforms for supply chain maintenance, 
@@ -228,18 +233,18 @@ product documentation, and various service operations such as maintaining
 customer information and also for maintaining automated processes of business
 ~\cite{hid-sp18-406-hadoop-intro6}.
 
-Being an essential part of core hadoop projects, YARN is capable of allowing 
+Being an essential part of core Hadoop projects, YARN is capable of allowing 
 multiple data processing engines like interactive SQL, real-time streaming, data
-science and batch processing. Likewise YARN is growing to be a mandatory 
-foundation for new generation hadoop tools and has become an important component
+science and batch processing. Likewise, YARN is growing to be a mandatory 
+foundation for new generation Hadoop tools and has become an important component
 which is required for realizing modern data architecture. Additionally, YARN is 
-extending the capabilities of hadoop by providing support for the new 
-technologies which will be found within the data center. This helps in various 
-factors such as cost effective solutions, linear scalability for storing and 
+extending the capabilities of Hadoop by providing support for the new 
+technologies which will be found in the data center. This helps in various 
+factors such as cost-effective solutions, linear scalability for storing and 
 processing. Further, YARN is still in progress for improvising factors 
 specifically for the new engines which are emerging to interact with data 
 storage and analysis. Thus, YARN is one amongst the reliable architectural 
-center of hadoop  and definitely  the most important foundational component
+center of Hadoop  and definitely  the most important foundational component
 ~\cite{hid-sp18-406-hadoop-intro7}.
 
 \subsection{Advantages of Hadoop}
@@ -266,7 +271,7 @@ expense of outsourcing.
 \item Organizations can fully leverage their data: 
 With Hadoop systems, organizations can take full advantage of all their data – 
 structured and unstructured, real-time and historical.Earlier with traditional 
-legacy systems, all the available data and inputs were not used to do analysis 
+legacy systems, all the available data and inputs were not used to do the analysis 
 to support business activity. Leveraging adds more value to the data itself and 
 improves the return on investment (ROI) for the legacy systems.
 
@@ -278,15 +283,15 @@ provider community, which protects customers from vendor lock-in
 ~\cite{hid-sp18-406-hadoop-intro9}.
 
 \item Cost Effective: 
-Hadoop systems provides cost effective storage solution for businesses. The 
-problem with traditionalsystems is that it is extremely cost prohibitive to 
+Hadoop systems provide a cost-effective storage solution for businesses. The 
+problem with traditional systems is that it is extremely cost prohibitive to 
 process such massive volumes of data. To reduce costs, many companies in the 
 past would have had to down-sample data and classify it based on certain 
 assumptions as to which data was the most valuable. The raw data would be 
 deleted, as it would be too cost-prohibitive to keep. While this approach may 
-have worked in the short term providing very cost-effective solution for 
+have worked in the short term providing a very cost-effective solution for 
 expanding datasets. It is designed to scale-out architecture that can affordably
-store all company's data for use sometime later. This saves a lot of cost and 
+store all company's data for use sometime later. This saves a lot of costs and 
 improves the storage capability tremendously.
 
 \item Enhances Speed: 
@@ -297,6 +302,7 @@ in much faster data processing. If you’re dealing with large volumes of
 unstructured data, it can efficiently process terabytes of data in just minutes
 ~\cite{hid-sp18-406-hadoop-intro10}.
 
+
 \item Great Data Reliability: 
 Data reliability is one aspect that no organization wants to compromise on. 
 Hadoop provides complete confidence and reliability; in a scenario where data 
@@ -305,6 +311,7 @@ delivers all data without compromising on any aspect, at the same time keeping
 costs down. Whether you are a start-up, a government organization, or an 
 internet giant, Hadoop has proved its mettle when it comes to strong data 
 reliability in a variety of production applications at full scale.
+
 
 \item Comprehensive Authentication and Security: 
 All businesses are looking for software that makes their work safe, secure and 
@@ -316,16 +323,18 @@ Security is the top priority of every organization. Any unlawful access to data
 is sure to harm business dealings and 
 operations~\cite{hid-sp18-406-hadoop-intro11}.
 
+
 \item Flexible with Range of data sources: 
 Hadoop enables businesses to easily access new data sources and tap into 
 different types of data. The data collected from various sources will be of 
 structured or unstructured form. This means organizations can use Hadoop to 
 derive valuable business insights from data sources such as social media, 
 clickstream data,  or email conversations.A lot of time would need to be 
-allotted to convert all the collected data into single format. Hadoop saves 
+allotted to convert all the collected data into a single format. Hadoop saves 
 this time as it can derive valuable data from any form of data. It also has a 
-variety of functions such as data warehousing, fraud detection and market 
+variety of functions such as data warehousing, fraud detection, and market 
 campaign analysis.~\cite{hid-sp18-406-hadoop-intro12}.
+
 
 \item Resilient to failure: 
 A key advantage of using Hadoop is its fault tolerance. When data is sent to an 
@@ -334,6 +343,7 @@ which means that in the event of failure, there is another copy available for
 use~\cite{hid-sp18-406-hadoop-intro13}.
 
 \end{itemize}
+
 
 \section{Introduction to Apache Spark}
 Apache Spark~\cite{hid-sp18-408-ApacheSpark} is a cluster computing framework 
