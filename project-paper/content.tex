@@ -137,12 +137,10 @@ behind this is that the organizations lack power and strong tools to analyze
 such huge amount of data. Due to these limitations of processing data, a huge 
 amount of valuable data was termed as unwanted and discarded. It is useful and 
 important to collect and keep all the data in a safe storage, which the business
-organizations realized
+organizations realized~\cite{hid-sp18-406-hadoop-intro1}.
 
-~\cite{hid-sp18-406-hadoop-intro1}.
-
-Hadoop emerged as the strongest tool to deal with the above challenges of the big
-data. Now, almost all organizations use big data analysis to improve the 
+Hadoop emerged as the strongest tool to deal with the above challenges of the 
+big data. Now, almost all organizations use big data analysis to improve the 
 functionalities in each and every business unit. The various kinds of business 
 units include research, design, development, marketing, advertising, sales and
 customer handling. Sharing such huge amount of data across different platforms  
@@ -271,9 +269,9 @@ expense of outsourcing.
 \item Organizations can fully leverage their data: 
 With Hadoop systems, organizations can take full advantage of all their data – 
 structured and unstructured, real-time and historical.Earlier with traditional 
-legacy systems, all the available data and inputs were not used to do the analysis 
-to support business activity. Leveraging adds more value to the data itself and 
-improves the return on investment (ROI) for the legacy systems.
+legacy systems, all the available data and inputs were not used to do the 
+analysis to support business activity. Leveraging adds more value to the data 
+itself and improves the return on investment (ROI) for the legacy systems.
 
 \item Flexible architecture: 
 Some of the tasks that Hadoop is being used for today were formerly run by 
@@ -375,13 +373,13 @@ reduce onto a disk. On the other hand, Spark's RDD function by giving a working
 set for distributed programs and offer distributed shared memory in a restricted
 way. 
 
-Spark provides platform for implementation of iterative algorithms and 
+Spark provides a platform for implementation of iterative algorithms and 
 interactive data analysis. Iterative algorithms visit the data set multiple 
-times and interactive data analysis involves repeated querying of database. 
+times and interactive data analysis involves repeated querying of the database. 
 The latency of such applications can be reduced greatly when compared to a 
 Map-Reduce implementation of the task. 
 
-Apache Spark requires  a manger to handle the cluster load and also needs a 
+Apache Spark requires a manager to handle the cluster load and also needs a 
 distributed storage system. For cluster management, Spark supports standalone 
 cluster, Hadoop Yarn and Apache Mesos. To provide distributed storage, Spark 
 can be integrated with a variety of frameworks like Hadoop Distributed File 
@@ -453,11 +451,12 @@ the data, convert it to a database compatible format and finally write it to the
 database. In Streaming ETL, data is cleaned and aggregated continually before it 
 is pushed into data stores. Data Enrichment - This streaming capability enriches 
 live data by combining it with static data. This allows user to conduct more 
-real-time data analysis. Trigger event detection - Spark Streaming allows user 
-to detect and respond quickly to unusual behaviors in real-time. Complex Session
-Analysis - Using the Spark Streaming feature, events with respect to live 
-sessions such as user activity in a website or an application. These session 
-informations can be used continuously to update the machine learning models. 
+real-time data analysis. Trigger event detection - Spark Streaming allows the 
+user to detect and respond quickly to unusual behaviors in real-time. Complex 
+Session Analysis - Using the Spark Streaming feature, events with respect to 
+live sessions such as user activity in a website or an application. The 
+session information can be used continuously to update the machine learning 
+models. 
 Machine Learning: Apache Spark comes integrated with a framework for performing 
 advanced analytics. It helps users run repeated queries on data sets which 
 amounts to processing machine learning algorithms. Spark supports machine 
@@ -482,13 +481,13 @@ fog computing solution~\cite{hid-sp18-408-Spark-Use-Case}.
 \section{Raspberry Pi}
 
 Raspberry Pi is a series of mini single-board computers. 
-It was developed by Raspberry Pi Foundation to promote teaching of basic 
+It was developed by Raspberry Pi Foundation to promote the teaching of basic 
 computer science. Till date, various Raspberry Pi's have been released with a 
-system on chip and ARM compatible CPU along with on-chip GPU.   The processor 
+system on chip and ARM compatible CPU along with on-chip GPU. The processor 
 speed ranges from 700 MHz to 1.4 GHz and on-board memory ranges from 256 MB to 
-1 GB RAM. SD cards can be used to store operating system and program memory. The
-boards have USB ports ranging from one to four ports. For video output, HDMI is 
-supported and 3.5 mm phono jack supports audio output. The Raspberry Pi 
+1 GB RAM. SD cards can be used to store the operating system and program memory.
+The boards have USB ports ranging from one to four ports. For video output, HDMI
+is supported and 3.5 mm phono jack supports audio output. The Raspberry Pi 
 Foundation provides Raspbian, a Debian-based Linux distribution along with 
 Ubuntu, Windows 10 IoT Core and specialized media center distributions. It 
 supports Python and Scratch as the main programming language and also supports 
@@ -503,7 +502,7 @@ required and since MapReduce keeps shuffling things, it required a lot of
 Input-Output activity. On the other hand, when SQL queries are run on Spark, it 
 executes faster since it has data in memory and requires less Input-Output 
 operations. Spark has a Map and a Reduce function like MapReduce, but it also 
-has richer features such as Filter, Join and Group-by. Hence development in 
+has richer features such as Filter, Joins and Group-by. Hence development in 
 Spark is easier and is flexible. Spark provides a lot of instructions at a 
 higher level of abstraction than what 
 MapReduce provides~\cite{hid-sp18-408-Difference}.
@@ -998,9 +997,9 @@ performance~\cite{hid-sp18-410-spark-RDD}.
 \subsection{Interactive tasks in MapReduce}
 
 General users run ad-hoc queries on the same subset of data where each query 
-would perform disk I/O on the stable storage that use most of the execution time.
-Figure~\ref{fig:interactive-MapRed} explains the current framework on execution 
-of interactive queries on MapReduce~\cite{hid-sp18-410-spark-RDD}.
+would perform disk I/O on the stable storage that use most of the execution 
+time. Figure~\ref{fig:interactive-MapRed} explains the current framework on 
+execution of interactive queries on MapReduce~\cite{hid-sp18-410-spark-RDD}.
 
 
 \begin{figure*}[!ht]
