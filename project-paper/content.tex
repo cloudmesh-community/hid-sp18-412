@@ -1,5 +1,23 @@
-% status: 0
+% status: 100
 % chapter: PaaS
+
+
+\def\paperstatus{100} % a number from 0-100 indicating your status. 100
+                % means completed
+\def\paperchapter{PaaS} % This section is typically a single keyword. from
+                   % a small list. Consult with theinstructors about
+                   % yours. They typically fill it out once your first
+                   % text has been reviewed.
+\def\hid{hid-sp18-412, hid-sp18-406, hid-sp18-408, hid-sp18-410} % all hids of the authors of this
+                                % paper. The paper must only be in one
+                                % authors directory and all other
+                                % authors contribute to it in that
+                                % directory. That authors hid must be
+                                % listed first
+\def\volume{9} % the volume of the proceedings in which this paper is to
+           % be included
+
+\def\locator{\hid, Volume: \volume, Chapter: \paperchapter, Status: \paperstatus. \newline}
 
 \title{Benchmarking Hadoop and Spark on Mutiple Platforms}
 
@@ -76,8 +94,7 @@ of these frameworks.
 
 \end{abstract}
 
-\keywords{hid-sp18-412, hid-sp18-406, hid-sp18-408, hid-sp18-410, 
-Raspberry Pi, Hadoop, Spark Cluster}
+\keywords{\locator\ Raspberry Pi, Hadoop, Spark Cluster}
 
 
 \maketitle
@@ -1131,7 +1148,7 @@ YARN with Java and Python.
 The Table~\ref{t:results-table3} makes a comparison of performance of standalone
 Docker running Python code on varies sized data sets.
 
- Clearly, standalone Spark outperforms Hadoop(HDFS) because it persists 
+ Clearly, standalone Spark outperforms Hadoop (HDFS) because it persists 
  the data in memory whereas the HDFS based Hadoop performs extra overhead 
  operations such as shuffling of data and hence executes slower. 
  Docker stores data in its own cache for subsequent runs, and hence the 
